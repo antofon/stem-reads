@@ -1,0 +1,40 @@
+@import "../partials/reset";
+@import "../partials/colors";
+@import "../partials/typography";
+
+//GLOBAL STYLES
+body {
+  background-image: $bg-gradient;
+}
+
+// MAIN APP COMPONENT
+.app {
+  max-width: 1000px;
+  margin: 9vw auto 0 auto;
+}
+
+// HEADER COMPONENT
+.header-wrapper {
+  color: $white-copy;
+  text-align: center;
+
+  h1 {
+    font-size: 8vw;
+    margin-bottom: 1.5vw;
+  }
+  .stem-copy {
+    font-family: $segoe;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .reads-copy {
+    font-family: $comfortaa;
+    font-weight: 300;
+  }
+  p {
+    font-family: $segoe;
+    font-weight: 400;
+    font-size: 3.8vw;
+    padding: 0 15vw;
+  }
+}
