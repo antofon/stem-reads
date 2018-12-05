@@ -179,9 +179,19 @@ body {
   -webkit-box-shadow: 7px 7px 15px 0px #000000;
   font-family: "Segoe UI"; }
   .form-wrapper form {
-    padding: 100px 40px 0px 40px; }
+    padding: 40px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+    width: 208px; }
     .form-wrapper form .input-fields {
-      padding-bottom: 40px; }
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: auto;
+      width: 1px; }
       .form-wrapper form .input-fields .username-field {
         padding-bottom: 40px;
         padding-bottom: 22px; }
@@ -194,7 +204,11 @@ body {
           border-radius: 4px;
           border: 1px solid #cccccc;
           padding: 7px 0;
-          width: 300px; }
+          width: 208px; }
+        @media screen and (min-width: 667px) {
+          .form-wrapper form .input-fields .username-field input,
+          .form-wrapper form .input-fields .password-field input {
+            width: 300px; } }
   .form-wrapper .or-flex {
     display: flex;
     width: 210px;
@@ -223,6 +237,27 @@ body {
     .form-wrapper .sign-up-buttons input:hover {
       cursor: pointer;
       opacity: 0.85; }
+
+.routing-buttons {
+  display: flex;
+  text-align: center;
+  justify-content: space-between; }
+  .routing-buttons .signup-button {
+    background: #cccccc;
+    color: #ffffff;
+    border-top-left-radius: 4px; }
+  .routing-buttons .login-button {
+    color: #1a1a1a; }
+  .routing-buttons .signup-button,
+  .routing-buttons .login-button {
+    padding: 20px 40px; }
+  @media screen and (min-width: 667px) {
+    .routing-buttons .signup-button,
+    .routing-buttons .login-button {
+      padding: 20px 70px; } }
+
+.routing-buttons:hover {
+  cursor: pointer; }
 
 @media screen and (min-width: 667px) {
   .form-wrapper {
