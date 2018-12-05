@@ -1,9 +1,36 @@
 import React, { Component } from "react";
 
 class AuthenticateForm extends Component {
+  //   constructor(props) {
+  //     super(props);
+  //     this.state = { clicked: true };
+  //     this.handleClick = this.handleClick.bind(this);
+  //   }
+  //   handleClick() {
+  //     if (this.state.clicked === "true") {
+  //       //   this.setState(state => ({
+
+  //       //   }));
+  //       alert(this.state.clicked);
+  //     } else {
+  //       this.setState(state => ({
+  //         clicked: !state.clicked
+  //       }));
+  //       alert(this.state.clicked);
+  //     }
+  // }
   render() {
     return (
       <div className="form-wrapper">
+        <div class="routing-buttons">
+          <p className="signup-button" onClick={this.handleClick}>
+            Sign up
+          </p>
+          <p className="login-button" onClick={this.handleClick}>
+            Log in
+          </p>
+        </div>
+
         <form>
           <div className="input-fields">
             <div className="username-field">
