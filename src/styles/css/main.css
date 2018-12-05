@@ -151,7 +151,7 @@ body {
   .header-wrapper p {
     font-family: "Segoe UI";
     font-weight: 400;
-    font-size: 3.6vw;
+    font-size: 4vw;
     padding: 0 15vw; }
   @media screen and (min-width: 667px) {
     .header-wrapper h1 {
@@ -169,17 +169,36 @@ body {
       padding: 0 50px; } }
 
 .form-wrapper {
-  width: 300px;
-  margin: 20px auto 0 auto;
+  width: 260px;
+  margin: 60px auto 0 auto;
   background: #f2f2f2;
   padding-bottom: 40px;
   border-radius: 4px;
-  box-shadow: 7px 7px 15px 0px #000000; }
+  box-shadow: 7px 7px 15px 0px;
+  -moz-box-shadow: 7px 7px 15px 0px #000000;
+  -webkit-box-shadow: 7px 7px 15px 0px #000000;
+  font-family: "Segoe UI"; }
   .form-wrapper form {
-    padding: 50px 40px; }
+    padding: 100px 40px 0px 40px; }
+    .form-wrapper form .input-fields {
+      padding-bottom: 40px; }
+      .form-wrapper form .input-fields .username-field {
+        padding-bottom: 40px;
+        padding-bottom: 22px; }
+      .form-wrapper form .input-fields .username-field,
+      .form-wrapper form .input-fields .password-field {
+        font-weight: 600; }
+        .form-wrapper form .input-fields .username-field input,
+        .form-wrapper form .input-fields .password-field input {
+          margin-top: 22px;
+          border-radius: 4px;
+          border: 1px solid #cccccc;
+          padding: 7px 0;
+          width: 300px; }
   .form-wrapper .or-flex {
     display: flex;
-    width: 160px; }
+    width: 210px;
+    margin: 20px 0; }
   .form-wrapper .horiz-left,
   .form-wrapper .horiz-right {
     color: #808080;
@@ -192,5 +211,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; }
+    .form-wrapper .sign-up-buttons input {
+      background-image: linear-gradient(90deg, #dc5cff, #3f61ff);
+      color: #ffffff;
+      border: none;
+      font-size: 16px;
+      padding: 12px 0;
+      width: 210px;
+      border-radius: 4px;
+      transition: 0.2s all; }
+    .form-wrapper .sign-up-buttons input:hover {
+      cursor: pointer;
+      opacity: 0.85; }
+
+@media screen and (min-width: 667px) {
+  .form-wrapper {
+    width: 380px; } }
 
 /*# sourceMappingURL=main.css.map */

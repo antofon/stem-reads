@@ -46,7 +46,7 @@ body {
   p {
     font-family: $segoe;
     font-weight: 400;
-    font-size: 3.6vw;
+    font-size: 4vw;
     padding: 0 15vw;
   }
 
@@ -76,20 +76,44 @@ body {
 
 //AUTHENTICATE COMPONENT
 .form-wrapper {
-  width: 300px;
-  margin: 20px auto 0 auto;
+  width: 260px;
+  margin: 60px auto 0 auto;
   background: $bg-gray;
   padding-bottom: 40px;
   border-radius: 4px;
-  box-shadow: 7px 7px 15px 0px $black-copy;
+  box-shadow: 7px 7px 15px 0px;
+  -moz-box-shadow: 7px 7px 15px 0px $black-copy;
+  -webkit-box-shadow: 7px 7px 15px 0px $black-copy;
+  font-family: $segoe;
 
   form {
-    padding: 50px 40px;
+    padding: 100px 40px 0px 40px;
+
+    .input-fields {
+      padding-bottom: 40px;
+      .username-field {
+        padding-bottom: 40px;
+        padding-bottom: 22px;
+      }
+
+      .username-field,
+      .password-field {
+        font-weight: 600;
+        input {
+          margin-top: 22px;
+          border-radius: 4px;
+          border: 1px solid #cccccc;
+          padding: 7px 0;
+          width: 300px;
+        }
+      }
+    }
   }
 
   .or-flex {
     display: flex;
-    width: 160px;
+    width: 210px;
+    margin: 20px 0;
   }
 
   .horiz-left,
@@ -107,5 +131,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    input {
+      background-image: $bg-gradient;
+      color: $white-copy;
+      border: none;
+      font-size: 16px;
+      padding: 12px 0;
+      width: 210px;
+      border-radius: 4px;
+      transition: 0.2s all;
+    }
+
+    input:hover {
+      cursor: pointer;
+      opacity: 0.85;
+    }
+  }
+}
+@media screen and (min-width: 667px) {
+  .form-wrapper {
+    width: 380px;
   }
 }
