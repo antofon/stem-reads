@@ -5,23 +5,30 @@ class AuthenticateForm extends Component {
     return (
       <div className="form-wrapper">
         <form>
-          <label for="username" />
-          Username
-          <input type="text" id="username" />
-          <label for="pass" />
-          Password
-          <input type="password" id="pass" />
-        </form>
+          <div className="input-fields">
+            <div className="username-field">
+              <label htmlFor="username" />
+              Username
+              <input type="text" id="username" />
+            </div>
 
-        <div className="sign-up-buttons">
-          <input type="submit" value="Sign up" />
-          <div className="or-flex">
-            <hr className="horiz-left" />
-            <span className="or-copy">or</span>
-            <hr className="horiz-right" />
+            <div className="password-field">
+              <label htmlFor="pass" />
+              Password
+              <input type="password" id="pass" />
+            </div>
           </div>
-          <input type="submit" value="Use another account" />
-        </div>
+
+          <div className="sign-up-buttons">
+            <input type="submit" value="Sign up" />
+            <div className="or-flex">
+              <hr className="horiz-left" />
+              <span className="or-copy">or</span>
+              <hr className="horiz-right" />
+            </div>
+            <input type="submit" value="Use another account" />
+          </div>
+        </form>
       </div>
     );
   }
