@@ -7,7 +7,7 @@ const Header = () => {
         <span className="stem-copy">Stem</span>
         <span className="reads-copy">reads</span>
       </h1>
-      <p>A compilation of readings about past and present leaders in STEM.</p>
+      {/*<p>A compilation of readings about past and present leaders in STEM.</p>*/}
     </div>
   );
 };
