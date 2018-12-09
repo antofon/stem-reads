@@ -130,11 +130,14 @@ body {
 
 .app {
   max-width: 1000px;
-  margin: 7.5vw auto 0 auto; }
+  margin: 7vw auto 0 auto; }
 
+@media screen and (min-width: 667px) {
+  .app {
+    margin: 10vw auto 0 auto; } }
 @media screen and (min-width: 1008px) {
   .app {
-    margin: 40px auto 0 auto; } }
+    margin: 75px auto 0 auto; } }
 .header-wrapper {
   color: #ffffff;
   text-align: center; }
@@ -168,100 +171,136 @@ body {
       font-size: 24px;
       padding: 0 50px; } }
 
-.form-wrapper {
+.component-wrapper {
   width: 260px;
-  margin: 60px auto 0 auto;
-  background: #f2f2f2;
-  padding-bottom: 40px;
-  border-radius: 4px;
-  box-shadow: 7px 7px 15px 0px;
-  -moz-box-shadow: 7px 7px 15px 0px #000000;
-  -webkit-box-shadow: 7px 7px 15px 0px #000000;
-  font-family: "Segoe UI"; }
-  .form-wrapper form {
-    padding: 40px 0px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: auto;
-    width: 208px; }
-    .form-wrapper form .input-fields {
-      padding-bottom: 40px;
+  margin: 30px auto 0 auto; }
+  .component-wrapper .form-wrapper {
+    background: #f2f2f2;
+    padding-bottom: 40px;
+    border-radius: 4px;
+    box-shadow: 7px 7px 15px 0px;
+    -moz-box-shadow: 7px 7px 15px 0px #000000;
+    -webkit-box-shadow: 7px 7px 15px 0px #000000;
+    font-family: "Segoe UI"; }
+    .component-wrapper .form-wrapper form {
+      padding: 40px 0px 0px 0px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       margin: auto;
-      width: 1px; }
-      .form-wrapper form .input-fields .username-field {
+      width: 208px; }
+      .component-wrapper .form-wrapper form .input-fields {
         padding-bottom: 40px;
-        padding-bottom: 22px; }
-      .form-wrapper form .input-fields .username-field,
-      .form-wrapper form .input-fields .password-field {
-        font-weight: 600; }
-        .form-wrapper form .input-fields .username-field input,
-        .form-wrapper form .input-fields .password-field input {
-          margin-top: 22px;
-          border-radius: 4px;
-          border: 1px solid #cccccc;
-          padding: 8px 7px;
-          font-size: 16px;
-          width: 208px; }
-        @media screen and (min-width: 667px) {
-          .form-wrapper form .input-fields .username-field input,
-          .form-wrapper form .input-fields .password-field input {
-            width: 300px; } }
-  .form-wrapper .or-flex {
-    display: flex;
-    width: 210px;
-    margin: 20px 0; }
-  .form-wrapper .horiz-left,
-  .form-wrapper .horiz-right {
-    color: #808080;
-    width: 120px;
-    border: 0.5px solid #808080; }
-  .form-wrapper .or-copy {
-    padding: 0 15px;
-    color: #808080; }
-  .form-wrapper .sign-up-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-    .form-wrapper .sign-up-buttons input {
-      background-image: linear-gradient(90deg, #dc5cff, #3f61ff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 1px; }
+        .component-wrapper .form-wrapper form .input-fields .username-field {
+          padding-bottom: 40px;
+          padding-bottom: 22px; }
+        .component-wrapper .form-wrapper form .input-fields .username-field,
+        .component-wrapper .form-wrapper form .input-fields .password-field {
+          font-weight: 600; }
+          .component-wrapper .form-wrapper form .input-fields .username-field input,
+          .component-wrapper .form-wrapper form .input-fields .password-field input {
+            margin-top: 22px;
+            border-radius: 4px;
+            border: 1px solid #cccccc;
+            padding: 8px 7px;
+            font-size: 16px;
+            width: 208px; }
+          @media screen and (min-width: 667px) {
+            .component-wrapper .form-wrapper form .input-fields .username-field input,
+            .component-wrapper .form-wrapper form .input-fields .password-field input {
+              width: 300px; } }
+    .component-wrapper .form-wrapper .sign-up-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .component-wrapper .form-wrapper .sign-up-buttons input {
+        background-image: linear-gradient(90deg, #dc5cff, #3f61ff);
+        color: #ffffff;
+        border: none;
+        font-size: 16px;
+        padding: 12px 0;
+        width: 210px;
+        border-radius: 4px;
+        transition: 0.2s all; }
+      .component-wrapper .form-wrapper .sign-up-buttons input:hover {
+        cursor: pointer;
+        opacity: 0.85; }
+      .component-wrapper .form-wrapper .sign-up-buttons .or-flex {
+        display: flex;
+        width: 210px;
+        margin: 20px 0; }
+        .component-wrapper .form-wrapper .sign-up-buttons .or-flex .horiz-left,
+        .component-wrapper .form-wrapper .sign-up-buttons .or-flex .horiz-right {
+          color: #808080;
+          width: 120px;
+          border: 0.5px solid #808080; }
+        .component-wrapper .form-wrapper .sign-up-buttons .or-flex .or-copy {
+          padding: 0 15px;
+          color: #808080; }
+    .component-wrapper .form-wrapper .routing-buttons {
+      display: flex;
+      text-align: center;
+      justify-content: space-between; }
+      .component-wrapper .form-wrapper .routing-buttons .signup-button {
+        background: #cccccc;
+        color: #ffffff;
+        border-top-left-radius: 4px; }
+        .component-wrapper .form-wrapper .routing-buttons .signup-button:hover {
+          cursor: pointer; }
+      .component-wrapper .form-wrapper .routing-buttons .login-button {
+        color: #1a1a1a; }
+        .component-wrapper .form-wrapper .routing-buttons .login-button:hover {
+          cursor: pointer; }
+      .component-wrapper .form-wrapper .routing-buttons .signup-button,
+      .component-wrapper .form-wrapper .routing-buttons .login-button {
+        padding: 20px 40px; }
+      @media screen and (min-width: 667px) {
+        .component-wrapper .form-wrapper .routing-buttons .signup-button,
+        .component-wrapper .form-wrapper .routing-buttons .login-button {
+          padding: 20px 70px; } }
+  .component-wrapper .account-question {
+    text-align: center;
+    margin-top: 20px; }
+    .component-wrapper .account-question a {
+      font-family: "Segoe UI";
+      font-size: 14px;
       color: #ffffff;
+      text-decoration: none; }
+      .component-wrapper .account-question a:hover {
+        text-decoration: underline; }
+    @media screen and (min-width: 667px) {
+      .component-wrapper .account-question a {
+        font-size: 16px; } }
+  .component-wrapper .preview-collection-wrapper {
+    text-align: center; }
+    .component-wrapper .preview-collection-wrapper .preview-collection {
+      color: #000000;
+      background: #ffffff;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 3px;
+      font-family: "Segoe UI";
       border: none;
-      font-size: 16px;
-      padding: 12px 0;
-      width: 210px;
-      border-radius: 4px;
+      font-weight: 500;
+      margin-top: 15px;
       transition: 0.2s all; }
-    .form-wrapper .sign-up-buttons input:hover {
-      cursor: pointer;
-      opacity: 0.85; }
-
-.routing-buttons {
-  display: flex;
-  text-align: center;
-  justify-content: space-between; }
-  .routing-buttons .signup-button {
-    background: #cccccc;
-    color: #ffffff;
-    border-top-left-radius: 4px; }
-  .routing-buttons .login-button {
-    color: #1a1a1a; }
-  .routing-buttons .signup-button,
-  .routing-buttons .login-button {
-    padding: 20px 40px; }
-  @media screen and (min-width: 667px) {
-    .routing-buttons .signup-button,
-    .routing-buttons .login-button {
-      padding: 20px 70px; } }
-
-.routing-buttons:hover {
-  cursor: pointer; }
+      .component-wrapper .preview-collection-wrapper .preview-collection:hover {
+        cursor: pointer;
+        color: #ffffff;
+        background: #000000; }
+    @media screen and (min-width: 667px) {
+      .component-wrapper .preview-collection-wrapper .preview-collection {
+        position: absolute;
+        right: 10px;
+        top: 5px; } }
 
 @media screen and (min-width: 667px) {
-  .form-wrapper {
+  .component-wrapper {
     width: 380px; } }
 
 /*# sourceMappingURL=main.css.map */
