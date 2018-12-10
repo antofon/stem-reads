@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import Navigation from "./Navigation";
 class AuthenticateForm extends Component {
   //   constructor(props) {
   //     super(props);
@@ -19,17 +20,24 @@ class AuthenticateForm extends Component {
   //       alert(this.state.clicked);
   //     }
   // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      authUser: null
+    };
+  }
   render() {
     return (
       <div className="component-wrapper">
         <div className="form-wrapper">
           <div className="routing-buttons">
-            <p className="signup-button" onClick={this.handleClick}>
+            {/*<p className="signup-button" onClick={this.handleClick}>
               Sign up
             </p>
             <p className="login-button" onClick={this.handleClick}>
               Log in
-            </p>
+    </p>*/}
+            <Navigation authUser={this.state.authUser} />
           </div>
 
           <form>
@@ -60,10 +68,6 @@ class AuthenticateForm extends Component {
         </div>
         <p className="account-question">
           <a href="#">Why should I create an account?</a>
-        </p>
-
-        <p className="preview-collection-wrapper">
-          <button className="preview-collection">Preview Collection</button>
         </p>
       </div>
     );
