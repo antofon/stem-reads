@@ -134,10 +134,10 @@ body {
 
 @media screen and (min-width: 667px) {
   .app {
-    margin: 10vw auto 0 auto; } }
+    margin: 5vw auto 0 auto; } }
 @media screen and (min-width: 1008px) {
   .app {
-    margin: 75px auto 0 auto; } }
+    margin: 40px auto 0 auto; } }
 .header-wrapper {
   color: #ffffff;
   text-align: center; }
@@ -173,7 +173,8 @@ body {
 
 .component-wrapper {
   width: 260px;
-  margin: 30px auto 0 auto; }
+  margin: 30px auto 0 auto;
+  position: relative; }
   .component-wrapper .form-wrapper {
     background: #f2f2f2;
     padding-bottom: 40px;
@@ -277,7 +278,7 @@ body {
       .component-wrapper .account-question a {
         font-size: 16px; } }
   .component-wrapper .preview-collection-wrapper {
-    text-align: center; }
+    display: none; }
     .component-wrapper .preview-collection-wrapper .preview-collection {
       color: #000000;
       background: #ffffff;
@@ -293,11 +294,20 @@ body {
         cursor: pointer;
         color: #ffffff;
         background: #000000; }
-    @media screen and (min-width: 667px) {
-      .component-wrapper .preview-collection-wrapper .preview-collection {
-        position: absolute;
-        right: 10px;
-        top: 5px; } }
+  @media screen and (min-width: 667px) {
+    .component-wrapper .preview-collection-wrapper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      bottom: -8vw;
+      display: block; } }
+  @media screen and (min-width: 750px) {
+    .component-wrapper .preview-collection-wrapper {
+      bottom: -5.5vw; } }
+  @media screen and (min-width: 1008px) {
+    .component-wrapper .preview-collection-wrapper {
+      bottom: -55px; } }
 
 @media screen and (min-width: 667px) {
   .component-wrapper {
