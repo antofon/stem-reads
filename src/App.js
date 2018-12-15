@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./components/Header";
-import AuthenticateForm from "./components/AuthenticateForm";
+import Landing from "./components/Landing";
 import "./styles/css/main.css";
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <AuthenticateForm />
+        <Landing />
       </div>
     );
   }
