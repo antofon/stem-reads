@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-
-import Navigation from "./Navigation";
+import Signup from "./Signup";
+import Login from "./Login";
+import PreviewCollections from "./PreviewCollections";
+import * as ROUTES from "../constants/routes";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+// import Navigation from "./Navigation";
 class AuthenticateForm extends Component {
   //   constructor(props) {
   //     super(props);
@@ -28,48 +32,33 @@ class AuthenticateForm extends Component {
   }
   render() {
     return (
-      <div className="component-wrapper">
-        <div className="form-wrapper">
-          <div className="routing-buttons">
-            {/*<p className="signup-button" onClick={this.handleClick}>
-              Sign up
-            </p>
-            <p className="login-button" onClick={this.handleClick}>
-              Log in
-    </p>*/}
-            <Navigation authUser={this.state.authUser} />
+      <Router>
+        <div className="component-wrapper">
+          <div className="form-wrapper">
+            <div className="routing-buttons">
+              <p className="signup-button" onClick={this.handleClick}>
+                Sign up
+              </p>
+              <p className="login-button" onClick={this.handleClick}>
+                Log in
+              </p>
+              {/* <Navigation authUser={this.state.authUser} /> */}
+            </div>
+
+            <Signup />
+            <Login />
           </div>
-
-          <form>
-            <div className="input-fields">
-              <div className="username-field">
-                <label htmlFor="username" />
-                Username
-                <input type="text" id="username" />
-              </div>
-
-              <div className="password-field">
-                <label htmlFor="pass" />
-                Password
-                <input type="password" id="pass" />
-              </div>
-            </div>
-
-            <div className="sign-up-buttons">
-              <input type="submit" value="Sign up" />
-              <div className="or-flex">
-                <hr className="horiz-left" />
-                <span className="or-copy">or</span>
-                <hr className="horiz-right" />
-              </div>
-              <input type="submit" value="Use another account" />
-            </div>
-          </form>
+          <p className="account-question">
+            <Link to={ROUTES.PREVIEW_COLLECTIONS}>
+              Why should I create an account?
+            </Link>
+          </p>
+          <Route
+            path={ROUTES.PREVIEW_COLLECTIONS}
+            component={PreviewCollections}
+          />
         </div>
-        <p className="account-question">
-          <a href="#">Why should I create an account?</a>
-        </p>
-      </div>
+      </Router>
     );
   }
 }

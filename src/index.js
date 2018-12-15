@@ -6,11 +6,13 @@ import NotFound from "./components/NotFound";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
+import PreviewCollections from "./components/PreviewCollections";
 
 ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path={ROUTES.LANDING} component={App} />
+      <Route path={ROUTES.PREVIEW_COLLECTIONS} component={PreviewCollections} />
       <Route component={NotFound} />
     </Switch>
   </Router>,
