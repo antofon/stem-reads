@@ -243,27 +243,27 @@ body {
         .component-wrapper .form-wrapper .sign-up-buttons .or-flex .or-copy {
           padding: 0 15px;
           color: #808080; }
-    .component-wrapper .form-wrapper .routing-buttons {
-      display: flex;
-      text-align: center;
-      justify-content: space-between; }
-      .component-wrapper .form-wrapper .routing-buttons .signup-button {
-        background: #cccccc;
-        color: #ffffff;
-        border-top-left-radius: 4px; }
-        .component-wrapper .form-wrapper .routing-buttons .signup-button:hover {
-          cursor: pointer; }
-      .component-wrapper .form-wrapper .routing-buttons .login-button {
-        color: #1a1a1a; }
-        .component-wrapper .form-wrapper .routing-buttons .login-button:hover {
-          cursor: pointer; }
+    .component-wrapper .form-wrapper .routing-buttons .signup-button {
+      color: #1a1a1a;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
+      .component-wrapper .form-wrapper .routing-buttons .signup-button:hover {
+        cursor: pointer; }
+    .component-wrapper .form-wrapper .routing-buttons .login-button {
+      background: #cccccc;
+      color: #ffffff;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
+      .component-wrapper .form-wrapper .routing-buttons .login-button:hover {
+        cursor: pointer; }
+    .component-wrapper .form-wrapper .routing-buttons .signup-button,
+    .component-wrapper .form-wrapper .routing-buttons .login-button {
+      padding: 20px 40px;
+      text-align: center; }
+    @media screen and (min-width: 667px) {
       .component-wrapper .form-wrapper .routing-buttons .signup-button,
       .component-wrapper .form-wrapper .routing-buttons .login-button {
-        padding: 20px 40px; }
-      @media screen and (min-width: 667px) {
-        .component-wrapper .form-wrapper .routing-buttons .signup-button,
-        .component-wrapper .form-wrapper .routing-buttons .login-button {
-          padding: 20px 70px; } }
+        padding: 20px 70px; } }
   .component-wrapper .account-question {
     text-align: center;
     margin-top: 20px; }

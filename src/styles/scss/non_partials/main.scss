@@ -176,20 +176,24 @@ body {
     }
 
     .routing-buttons {
-      display: flex;
-      text-align: center;
-      justify-content: space-between;
+      // display: flex;
+      // text-align: center;
+      // justify-content: space-between;
 
       .signup-button {
-        background: $active-gray;
-        color: $white-copy;
+        color: $inactive-black;
         border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
         &:hover {
           cursor: pointer;
         }
       }
       .login-button {
-        color: $inactive-black;
+        background: $active-gray;
+        color: $white-copy;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+
         &:hover {
           cursor: pointer;
         }
@@ -198,6 +202,7 @@ body {
       .signup-button,
       .login-button {
         padding: 20px 40px;
+        text-align: center;
       }
 
       @media screen and (min-width: 667px) {
