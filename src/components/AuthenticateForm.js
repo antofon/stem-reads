@@ -81,8 +81,12 @@ class AuthenticateForm extends Component {
           {/* </div> */}
         </div>
         <p className="account-question">
+          <Link to={ROUTES.ACCOUNT_FAQ}>Why should I create an account?</Link>
+        </p>
+
+        <p className="preview-collection-wrapper">
           <Link to={ROUTES.PREVIEW_COLLECTIONS}>
-            Why should I create an account?
+            <button className="preview-collection">Preview Collection</button>
           </Link>
         </p>
       </div>
