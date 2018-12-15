@@ -28,9 +28,9 @@ const Signup = () => {
     //   </div>
     // </form>
     <div className="signup-wrapper">
-      <p className="signup-button">
+      {/* <p className="signup-button">
         Sign up <FaUser />
-      </p>
+      </p> */}
       <form>
         <div className="input-fields">
           <div className="username-field">

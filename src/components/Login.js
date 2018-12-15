@@ -28,9 +28,9 @@ const Login = () => {
     //   </div>
     // </form>
     <div className="login-wrapper">
-      <p className="login-button" onClick={this.handleClick}>
+      {/* <p className="login-button">
         Login <FaUser />
-      </p>
+      </p> */}
       <form>
         <div className="input-fields">
           <div className="username-field">
