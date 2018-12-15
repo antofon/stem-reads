@@ -2,12 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 // import './index.css';
 import App from "./App";
+import NotFound from "./components/NotFound";
 import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import * as ROUTES from "./constants/routes";
 
 ReactDOM.render(
   <Router>
-    <App />
+    <Switch>
+      <Route exact path={ROUTES.LANDING} component={App} />
+      <Route component={NotFound} />
+    </Switch>
   </Router>,
   document.getElementById("root")
 );
