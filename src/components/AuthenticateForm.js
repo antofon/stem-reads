@@ -24,39 +24,56 @@ class AuthenticateForm extends Component {
   //       alert(this.state.clicked);
   //     }
   // }
+
   constructor(props) {
+    // super(props);
+    // this.state = {
+    //   authUser: null
+    // };
     super(props);
-    this.state = {
-      authUser: null
-    };
+    this.state = { authUser: false };
+    this.handleClick = this.handleClick.bind(this);
   }
+
+  handleClick() {
+    this.setState(state => ({
+      authUser: !state.authUser
+    }));
+
+    console.log(`Auth user: ${this.state.authUser}`);
+  }
+
   render() {
     return (
       <Router>
         <div className="component-wrapper">
           <div className="form-wrapper">
-            <div className="routing-buttons">
-              <p className="signup-button" onClick={this.handleClick}>
-                Sign up
-              </p>
-              <p className="login-button" onClick={this.handleClick}>
-                Log in
-              </p>
-              {/* <Navigation authUser={this.state.authUser} /> */}
+            <div className="routing-buttons" onClick={this.handleClick}>
+              {this.state.authUser ? <Login /> : <Signup />}
+
+              {/* <Navigation authUser={this.state.authUser} /> *
             </div>
 
-            <Signup />
-            <Login />
+            {/* <div className="routing-buttons"> */}
+              {/*<p className="signup-button" onClick={this.handleClick}>
+              Sign up
+            </p>
+            <p className="login-button" onClick={this.handleClick}>
+              Log in
+    </p>*/}
+              {/* <Navigation authUser={this.state.authUser} /> */}
+              {/* </div> */}
+            </div>
+            <p className="account-question">
+              <Link to={ROUTES.PREVIEW_COLLECTIONS}>
+                Why should I create an account?
+              </Link>
+            </p>
+            <Route
+              path={ROUTES.PREVIEW_COLLECTIONS}
+              component={PreviewCollections}
+            />
           </div>
-          <p className="account-question">
-            <Link to={ROUTES.PREVIEW_COLLECTIONS}>
-              Why should I create an account?
-            </Link>
-          </p>
-          <Route
-            path={ROUTES.PREVIEW_COLLECTIONS}
-            component={PreviewCollections}
-          />
         </div>
       </Router>
     );
