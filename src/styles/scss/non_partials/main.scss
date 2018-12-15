@@ -80,7 +80,7 @@ body {
   }
 }
 
-//AUTHENTICATE COMPONENT
+//AUTHENTICATE, SIGN UP, AND LOG IN COMPONENTS
 
 .component-wrapper {
   width: 260px;
@@ -179,15 +179,10 @@ body {
       display: flex;
       text-align: center;
       justify-content: space-between;
-      // .auth-icon {
-      //   padding-top: 20px;
-      //   margin-top: 20px;
-      // }
 
       .signup-button {
         color: $inactive-black;
         border-top-left-radius: 4px;
-        // border-top-right-radius: 4px;
         &:hover {
           cursor: pointer;
         }
@@ -195,7 +190,6 @@ body {
       .login-button {
         background: $active-gray;
         color: $white-copy;
-        // border-top-left-radius: 4px;
         border-top-right-radius: 4px;
 
         &:hover {
@@ -208,7 +202,6 @@ body {
         padding: 20px 35px;
         display: flex;
         flex-direction: column;
-
         width: 100%;
         text-align: center;
 
@@ -223,7 +216,6 @@ body {
         .login-button {
           flex-direction: row;
           justify-content: center;
-          // padding: 20px 0px;
 
           .auth-icon {
             position: relative;
