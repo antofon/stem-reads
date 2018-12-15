@@ -1,18 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import './index.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import App from "./App";
 import NotFound from "./components/NotFound";
-import * as serviceWorker from "./serviceWorker";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import * as ROUTES from "./constants/routes";
+import AccountFaq from "./components/AccountFaq";
 import PreviewCollections from "./components/PreviewCollections";
+import * as ROUTES from "./constants/routes";
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path={ROUTES.LANDING} component={App} />
       <Route path={ROUTES.PREVIEW_COLLECTIONS} component={PreviewCollections} />
+      <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
       <Route component={NotFound} />
     </Switch>
   </Router>,
