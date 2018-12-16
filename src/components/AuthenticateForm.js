@@ -83,7 +83,7 @@ class AuthenticateForm extends Component {
               }
               onClick={this.handleLoginClick}
             >
-              <span className="auth-copy">Login</span>
+              <span className="auth-copy">Log in</span>
               <span className="auth-icon">
                 <FaUser />
               </span>
