@@ -180,20 +180,47 @@ body {
       text-align: center;
       justify-content: space-between;
 
+      .toggled {
+        background: $active-gray;
+        color: $white-copy;
+      }
+
+      .hover-opacity {
+        opacity: 1;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      // .toggle-login {
+      //   background: $active-gray;
+      //   color: $white-copy;
+      // }
+
+      // .inactive {
+      //   color: $inactive-black;
+      // }
       .signup-button {
-        color: $inactive-black;
+        // color: $inactive-black;
         border-top-left-radius: 4px;
+        transition: 0.3s all;
         &:hover {
           cursor: pointer;
+          // background: $active-gray;
+          // color: $white-copy;
         }
       }
       .login-button {
-        background: $active-gray;
-        color: $white-copy;
+        // background: $active-gray;
+        // color: $white-copy;
         border-top-right-radius: 4px;
+        transition: 0.3s all;
 
         &:hover {
           cursor: pointer;
+          // background: $active-gray;
+          // color: $white-copy;
         }
       }
 
