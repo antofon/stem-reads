@@ -8,7 +8,13 @@ import { FaUser } from "react-icons/fa";
 class AuthenticateForm extends Component {
   constructor(props) {
     super(props);
-    this.state = { authUser: true, showAuthSignup: false, showAuthLogin: true };
+    this.state = {
+      authUser: true,
+      showAuthSignup: false,
+      showAuthLogin: true,
+      signupCondition: true,
+      loginCondition: false
+    };
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleSignupClick = this.handleSignupClick.bind(this);
   }
@@ -20,13 +26,17 @@ class AuthenticateForm extends Component {
     this.setState(state => ({
       authUser: !state.authUser,
       showAuthSignup: !state.showAuthSignup,
-      showAuthLogin: !state.showAuthLogin
+      showAuthLogin: !state.showAuthLogin,
+      signupCondition: !state.signupCondition,
+      loginCondition: !state.loginCondition
     }));
 
     console.log(
       `SignUp Clicked -> Auth signup: ${
         this.state.showAuthSignup
-      } and Auth login:${this.state.showAuthLogin}`
+      } and Auth login:${this.state.showAuthLogin} and condition: ${
+        this.state.condition
+      }`
     );
   }
   handleLoginClick() {
@@ -36,7 +46,9 @@ class AuthenticateForm extends Component {
     this.setState(state => ({
       authUser: !state.authUser,
       showAuthLogin: !state.showAuthLogin,
-      showAuthSignup: !state.showAuthSignup
+      showAuthSignup: !state.showAuthSignup,
+      loginCondition: !state.loginCondition,
+      signupCondition: !state.signupCondition
     }));
 
     console.log(
@@ -50,13 +62,27 @@ class AuthenticateForm extends Component {
       <div className="component-wrapper">
         <div className="form-wrapper">
           <div className="routing-buttons">
-            <p className="signup-button" onClick={this.handleSignupClick}>
+            <p
+              className={
+                this.state.signupCondition
+                  ? "signup-button "
+                  : "signup-button toggled hover-opacity"
+              }
+              onClick={this.handleSignupClick}
+            >
               <span className="auth-copy">Sign up</span>
               <span className="auth-icon">
                 <FaUser />
               </span>
             </p>
-            <p className="login-button" onClick={this.handleLoginClick}>
+            <p
+              className={
+                this.state.loginCondition
+                  ? "login-button "
+                  : "login-button toggled hover-opacity"
+              }
+              onClick={this.handleLoginClick}
+            >
               <span className="auth-copy">Login</span>
               <span className="auth-icon">
                 <FaUser />
