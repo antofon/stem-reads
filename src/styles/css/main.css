@@ -253,17 +253,14 @@ body {
       .component-wrapper .form-wrapper .routing-buttons .hover-opacity {
         opacity: 1; }
         .component-wrapper .form-wrapper .routing-buttons .hover-opacity:hover {
-          opacity: 0.7; }
+          opacity: 0.7;
+          cursor: pointer; }
       .component-wrapper .form-wrapper .routing-buttons .signup-button {
         border-top-left-radius: 4px;
         transition: 0.3s all; }
-        .component-wrapper .form-wrapper .routing-buttons .signup-button:hover {
-          cursor: pointer; }
       .component-wrapper .form-wrapper .routing-buttons .login-button {
         border-top-right-radius: 4px;
         transition: 0.3s all; }
-        .component-wrapper .form-wrapper .routing-buttons .login-button:hover {
-          cursor: pointer; }
       .component-wrapper .form-wrapper .routing-buttons .signup-button,
       .component-wrapper .form-wrapper .routing-buttons .login-button {
         padding: 20px 35px;

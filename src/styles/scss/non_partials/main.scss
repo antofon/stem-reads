@@ -190,6 +190,7 @@ body {
 
         &:hover {
           opacity: 0.7;
+          cursor: pointer;
         }
       }
 
@@ -205,11 +206,11 @@ body {
         // color: $inactive-black;
         border-top-left-radius: 4px;
         transition: 0.3s all;
-        &:hover {
-          cursor: pointer;
-          // background: $active-gray;
-          // color: $white-copy;
-        }
+        // &:hover {
+        // cursor: pointer;
+        // background: $active-gray;
+        // color: $white-copy;
+        // }
       }
       .login-button {
         // background: $active-gray;
@@ -217,11 +218,11 @@ body {
         border-top-right-radius: 4px;
         transition: 0.3s all;
 
-        &:hover {
-          cursor: pointer;
-          // background: $active-gray;
-          // color: $white-copy;
-        }
+        // &:hover {
+        // cursor: pointer;
+        // background: $active-gray;
+        // color: $white-copy;
+        // }
       }
 
       .signup-button,
