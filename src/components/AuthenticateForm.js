@@ -106,15 +106,17 @@ class AuthenticateForm extends Component {
           {/* <Navigation authUser={this.state.authUser} /> */}
           {/* </div> */}
         </div>
-        <p className="account-question">
-          <Link to={ROUTES.ACCOUNT_FAQ}>Why should I create an account?</Link>
-        </p>
 
-        <p className="preview-collection-wrapper">
+        {/* ADD THESE TWO ADJACENT <P> TAGS BACK IF POSSIBLE */}
+        {/* <p className="account-question">
+          <Link to={ROUTES.ACCOUNT_FAQ}>Why should I create an account?</Link>
+        </p> */}
+
+        {/* <p className="preview-collection-wrapper">
           <Link to={ROUTES.PREVIEW_COLLECTIONS}>
             <button className="preview-collection">Preview Collection</button>
           </Link>
-        </p>
+        </p> */}
       </div>
     );
   }
