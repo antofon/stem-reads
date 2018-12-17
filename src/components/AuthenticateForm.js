@@ -90,9 +90,9 @@ class AuthenticateForm extends Component {
             </p>
           </div>
           {this.state.authUser ? (
-            <Login authLogin={this.state.showAuthLogin} />
-          ) : (
             <Signup authSignup={this.state.showAuthSignup} />
+          ) : (
+            <Login authLogin={this.state.showAuthLogin} />
           )}
 
           {/* {this.state.authUser ? <Login /> : <Signup />} */}

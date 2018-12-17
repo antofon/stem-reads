@@ -18,7 +18,7 @@ const Login = () => {
         </div>
 
         <div className="sign-up-buttons">
-          <input type="submit" value="Sign up" />
+          <input type="submit" value="Log in" />
           <div className="or-flex">
             <hr className="horiz-left" />
             <span className="or-copy">or</span>
