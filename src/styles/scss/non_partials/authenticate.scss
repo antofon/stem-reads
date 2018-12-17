@@ -1,0 +1,267 @@
+//AUTHENTICATE, SIGN UP, AND LOG IN COMPONENTS
+
+.component-wrapper {
+  width: 260px;
+  // if stemreads description present use margin: 60px auto 0 auto;
+  margin: 30px auto 0 auto;
+  position: relative;
+  .form-wrapper {
+    background: $bg-gray;
+    padding-bottom: 30px;
+    border-radius: 4px;
+    box-shadow: 7px 7px 15px 0px;
+    -moz-box-shadow: 7px 7px 15px 0px $black-copy;
+    -webkit-box-shadow: 7px 7px 15px 0px $black-copy;
+    font-family: $segoe;
+
+    .signup-wrapper,
+    .login-wrapper {
+      form {
+        padding: 40px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: auto;
+        width: 208px;
+      }
+    }
+
+    .signup-wrapper {
+      .input-fields {
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 1px;
+        .username-field,
+        .password-field {
+          padding-bottom: 22px;
+        }
+
+        .username-field,
+        .password-field,
+        .confirm-password-field {
+          font-weight: 600;
+          input {
+            margin-top: 22px;
+            border-radius: 4px;
+            border: 1px solid #cccccc;
+            padding: 8px 7px;
+            font-size: 16px;
+            width: 208px;
+          }
+
+          @media screen and (min-width: 667px) {
+            input {
+              width: 300px;
+            }
+          }
+        }
+      }
+    }
+
+    .login-wrapper {
+      .input-fields {
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 1px;
+        .username-field,
+        .password-field {
+          padding-bottom: 22px;
+        }
+
+        .username-field,
+        .password-field,
+        .confirm-password-field {
+          font-weight: 600;
+          input {
+            margin-top: 22px;
+            border-radius: 4px;
+            border: 1px solid #cccccc;
+            padding: 8px 7px;
+            font-size: 16px;
+            width: 208px;
+          }
+
+          @media screen and (min-width: 667px) {
+            input {
+              width: 300px;
+            }
+          }
+        }
+      }
+    }
+
+    .sign-up-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+        background-image: $bg-gradient;
+        color: $white-copy;
+        border: none;
+        font-size: 16px;
+        padding: 12px 0;
+        width: 210px;
+        border-radius: 4px;
+        transition: 0.2s all;
+      }
+
+      input:hover {
+        cursor: pointer;
+        opacity: 0.85;
+      }
+
+      .or-flex {
+        display: flex;
+        width: 210px;
+        margin: 20px 0;
+
+        .horiz-left,
+        .horiz-right {
+          color: $dark-gray;
+          width: 120px;
+          border: 0.5px solid $dark-gray;
+        }
+        .or-copy {
+          padding: 0 15px;
+          color: $dark-gray;
+        }
+      }
+    }
+
+    .routing-buttons {
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+
+      .toggled {
+        background: $active-gray;
+        color: $white-copy;
+      }
+
+      .hover-opacity {
+        opacity: 1;
+
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+
+      .signup-button {
+        border-top-left-radius: 4px;
+        transition: 0.3s all;
+      }
+
+      .login-button {
+        border-top-right-radius: 4px;
+        transition: 0.3s all;
+      }
+
+      .signup-button,
+      .login-button {
+        padding: 20px 35px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+
+        .auth-icon {
+          position: relative;
+          top: 7px;
+        }
+      }
+
+      @media screen and (min-width: 667px) {
+        .signup-button,
+        .login-button {
+          flex-direction: row;
+          justify-content: center;
+
+          .auth-icon {
+            position: relative;
+            top: 0px;
+            left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .account-question {
+    text-align: center;
+    margin-top: 20px;
+    a {
+      font-family: $segoe;
+      font-size: 14px;
+      color: $white-copy;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media screen and (min-width: 667px) {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .preview-collection-wrapper {
+    display: none;
+
+    .preview-collection {
+      color: $black-copy;
+      background: $white-copy;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 3px;
+      font-family: $segoe;
+      border: none;
+      font-weight: 500;
+      margin-top: 15px;
+      transition: 0.2s all;
+
+      &:hover {
+        cursor: pointer;
+        color: $white-copy;
+        background: $black-copy;
+      }
+    }
+  }
+  @media screen and (min-width: 667px) {
+    .preview-collection-wrapper {
+      position: absolute;
+      left: 31.5%;
+      right: 0;
+      width: 100%;
+      bottom: -8vw;
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .preview-collection-wrapper {
+      bottom: -5.5vw;
+    }
+  }
+
+  @media screen and (min-width: 1008px) {
+    .preview-collection-wrapper {
+      bottom: -55px;
+    }
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .component-wrapper {
+    width: 380px;
+  }
+}
