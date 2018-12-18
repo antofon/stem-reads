@@ -108,15 +108,15 @@ class AuthenticateForm extends Component {
         </div>
 
         {/* ADD THESE TWO ADJACENT <P> TAGS BACK IF POSSIBLE */}
-        {/* <p className="account-question">
+        <p className="account-question">
           <Link to={ROUTES.ACCOUNT_FAQ}>Why should I create an account?</Link>
-        </p> */}
+        </p>
 
-        {/* <p className="preview-collection-wrapper">
+        <p className="preview-collection-wrapper">
           <Link to={ROUTES.PREVIEW_COLLECTIONS}>
             <button className="preview-collection">Preview Collection</button>
           </Link>
-        </p> */}
+        </p>
       </div>
     );
   }
