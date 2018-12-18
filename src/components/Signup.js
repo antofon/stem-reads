@@ -32,12 +32,12 @@ class Signup extends Component {
 
           <div className="sign-up-buttons">
             <input type="submit" value="Sign up" onSubmit={this.onSubmit} />
-            <div className="or-flex">
+            {/* <div className="or-flex">
               <hr className="horiz-left" />
               <span className="or-copy">or</span>
               <hr className="horiz-right" />
             </div>
-            <input type="submit" value="Use another account" />
+            <input type="submit" value="Use another account" /> */}
           </div>
         </form>
       </div>
