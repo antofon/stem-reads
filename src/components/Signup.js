@@ -17,7 +17,20 @@ class Signup extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  onSubmit = event => {};
+  onSubmit = event => {
+    const { username, email, passwordOne } = this.state;
+
+    this.props.firebase
+      .doCreateUserWithEmailAndPassword(email, passwordOne)
+      .then(authUser => {
+        this.setState({ ...INITIAL_STATE });
+      })
+      .catch(error => {
+        this.setState({ error });
+      });
+
+    event.preventDefault();
+  };
 
   render() {
     const { username, email, passwordOne, passwordTwo, error } = this.state;

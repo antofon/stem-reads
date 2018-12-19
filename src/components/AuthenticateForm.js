@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Signup from "./Signup";
 import Login from "./Login";
+import { FirebaseContext } from "./Firebase";
 import * as ROUTES from "../constants/routes";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
@@ -90,7 +91,14 @@ class AuthenticateForm extends Component {
             </p>
           </div>
           {this.state.authUser ? (
-            <Signup authSignup={this.state.showAuthSignup} />
+            <FirebaseContext.Consumer>
+              {firebase => (
+                <Signup
+                  authSignup={this.state.showAuthSignup}
+                  firebase={firebase}
+                />
+              )}
+            </FirebaseContext.Consumer>
           ) : (
             <Login authLogin={this.state.showAuthLogin} />
           )}
