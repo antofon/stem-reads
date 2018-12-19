@@ -135,7 +135,7 @@ table {
     font-family: "Segoe UI"; }
     .component-wrapper .form-wrapper .signup-wrapper form,
     .component-wrapper .form-wrapper .login-wrapper form {
-      padding: 40px 0px 0px 0px;
+      padding: 25px 0px 0px 0px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -149,13 +149,16 @@ table {
       margin: auto;
       width: 1px; }
       .component-wrapper .form-wrapper .signup-wrapper .input-fields .username-field,
+      .component-wrapper .form-wrapper .signup-wrapper .input-fields .email-field,
       .component-wrapper .form-wrapper .signup-wrapper .input-fields .password-field {
         padding-bottom: 22px; }
       .component-wrapper .form-wrapper .signup-wrapper .input-fields .username-field,
+      .component-wrapper .form-wrapper .signup-wrapper .input-fields .email-field,
       .component-wrapper .form-wrapper .signup-wrapper .input-fields .password-field,
       .component-wrapper .form-wrapper .signup-wrapper .input-fields .confirm-password-field {
         font-weight: 600; }
         .component-wrapper .form-wrapper .signup-wrapper .input-fields .username-field input,
+        .component-wrapper .form-wrapper .signup-wrapper .input-fields .email-field input,
         .component-wrapper .form-wrapper .signup-wrapper .input-fields .password-field input,
         .component-wrapper .form-wrapper .signup-wrapper .input-fields .confirm-password-field input {
           margin-top: 22px;
@@ -166,6 +169,7 @@ table {
           width: 208px; }
         @media screen and (min-width: 667px) {
           .component-wrapper .form-wrapper .signup-wrapper .input-fields .username-field input,
+          .component-wrapper .form-wrapper .signup-wrapper .input-fields .email-field input,
           .component-wrapper .form-wrapper .signup-wrapper .input-fields .password-field input,
           .component-wrapper .form-wrapper .signup-wrapper .input-fields .confirm-password-field input {
             width: 300px; } }
@@ -180,10 +184,12 @@ table {
       .component-wrapper .form-wrapper .login-wrapper .input-fields .password-field {
         padding-bottom: 22px; }
       .component-wrapper .form-wrapper .login-wrapper .input-fields .username-field,
+      .component-wrapper .form-wrapper .login-wrapper .input-fields .email-field,
       .component-wrapper .form-wrapper .login-wrapper .input-fields .password-field,
       .component-wrapper .form-wrapper .login-wrapper .input-fields .confirm-password-field {
         font-weight: 600; }
         .component-wrapper .form-wrapper .login-wrapper .input-fields .username-field input,
+        .component-wrapper .form-wrapper .login-wrapper .input-fields .email-field input,
         .component-wrapper .form-wrapper .login-wrapper .input-fields .password-field input,
         .component-wrapper .form-wrapper .login-wrapper .input-fields .confirm-password-field input {
           margin-top: 22px;
@@ -194,6 +200,7 @@ table {
           width: 208px; }
         @media screen and (min-width: 667px) {
           .component-wrapper .form-wrapper .login-wrapper .input-fields .username-field input,
+          .component-wrapper .form-wrapper .login-wrapper .input-fields .email-field input,
           .component-wrapper .form-wrapper .login-wrapper .input-fields .password-field input,
           .component-wrapper .form-wrapper .login-wrapper .input-fields .confirm-password-field input {
             width: 300px; } }
@@ -266,7 +273,7 @@ table {
             left: 10px; } }
   .component-wrapper .account-question {
     text-align: center;
-    margin-top: 20px; }
+    margin-top: 15px; }
     .component-wrapper .account-question a {
       font-family: "Segoe UI";
       font-size: 14px;

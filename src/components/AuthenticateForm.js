@@ -112,11 +112,11 @@ class AuthenticateForm extends Component {
           <Link to={ROUTES.ACCOUNT_FAQ}>Why should I create an account?</Link>
         </p>
 
-        <p className="preview-collection-wrapper">
+        {/* <p className="preview-collection-wrapper">
           <Link to={ROUTES.PREVIEW_COLLECTIONS}>
             <button className="preview-collection">Preview Collection</button>
           </Link>
-        </p>
+        </p> */}
       </div>
     );
   }

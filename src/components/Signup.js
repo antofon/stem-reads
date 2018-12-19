@@ -1,13 +1,27 @@
 import React, { Component } from "react";
-
+const INITIAL_STATE = {
+  username: "",
+  email: "",
+  passwordOne: "",
+  passwordTwo: "",
+  error: null
+};
 class Signup extends Component {
   constructor(props) {
     super(props);
+
+    this.state = { ...INITIAL_STATE };
   }
+
+  onChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
   onSubmit = event => {};
 
   render() {
+    const { username, email, passwordOne, passwordTwo, error } = this.state;
+
     return (
       <div className="signup-wrapper">
         <form>
@@ -15,18 +29,53 @@ class Signup extends Component {
             <div className="username-field">
               <label htmlFor="username" />
               Username
-              <input type="text" id="username" />
+              <input
+                name="username"
+                value={username}
+                onChange={this.onChange}
+                // placeholder="Full Name"
+                type="text"
+                id="username"
+              />
             </div>
+
+            <div className="email-field">
+              <label htmlFor="email" />
+              Email Address
+              <input
+                name="email"
+                value={email}
+                onChange={this.onChange}
+                // placeholder="Email Address"
+                type="email"
+                id="email"
+              />
+            </div>
+
             <div className="password-field">
               <label htmlFor="pass" />
               Password
-              <input type="password" id="pass" />
+              <input
+                name="passwordOne"
+                value={passwordOne}
+                onChange={this.onChange}
+                // placeholder="Full Name"
+                type="password"
+                id="pass"
+              />
             </div>
 
             <div className="confirm-password-field">
               <label htmlFor="confirm-pass" />
               Confirm Password
-              <input type="password" id="confirm-pass" />
+              <input
+                name="passwordTwo"
+                value={passwordTwo}
+                onChange={this.onChange}
+                // placeholder="Full Name"
+                type="password"
+                id="confirm-pass"
+              />
             </div>
           </div>
 
