@@ -142,7 +142,7 @@ table {
       margin: auto;
       width: 208px; }
     .component-wrapper .form-wrapper .signup-wrapper .input-fields {
-      padding-bottom: 40px;
+      padding-bottom: 35px;
       display: flex;
       flex-direction: column;
       align-items: center;
