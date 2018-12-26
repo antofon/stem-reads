@@ -14,6 +14,7 @@ class Signup extends Component {
   }
 
   onChange = event => {
+    // console.log(event.target.value);
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -37,7 +38,7 @@ class Signup extends Component {
 
     return (
       <div className="signup-wrapper">
-        <form>
+        <form onSubmit={this.onSubmit}>
           <div className="input-fields">
             <div className="username-field">
               <label htmlFor="username" />
@@ -93,7 +94,7 @@ class Signup extends Component {
           </div>
 
           <div className="sign-up-buttons">
-            <input type="submit" value="Sign up" onSubmit={this.onSubmit} />
+            <input type="submit" value="Sign up" />
             {/* <div className="or-flex">
               <hr className="horiz-left" />
               <span className="or-copy">or</span>
@@ -101,6 +102,8 @@ class Signup extends Component {
             </div>
             <input type="submit" value="Use another account" /> */}
           </div>
+
+          {error && <p>{error.message}</p>}
         </form>
       </div>
     );
