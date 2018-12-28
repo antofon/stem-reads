@@ -25,6 +25,9 @@ class Signup extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
+        console.log(
+          `username: ${username}, email: ${email}, password: ${passwordOne}`
+        );
       })
       .catch(error => {
         this.setState({ error });
@@ -35,6 +38,12 @@ class Signup extends Component {
 
   render() {
     const { username, email, passwordOne, passwordTwo, error } = this.state;
+
+    const isInvalid =
+      passwordOne !== passwordTwo ||
+      passwordOne === "" ||
+      email === "" ||
+      username === "";
 
     return (
       <div className="signup-wrapper">
@@ -92,9 +101,9 @@ class Signup extends Component {
               />
             </div>
           </div>
-
+          {error && <p id="error-message">{error.message}</p>}
           <div className="sign-up-buttons">
-            <input type="submit" value="Sign up" />
+            <input disabled={isInvalid} type="submit" value="Sign up" />
             {/* <div className="or-flex">
               <hr className="horiz-left" />
               <span className="or-copy">or</span>
@@ -103,7 +112,7 @@ class Signup extends Component {
             <input type="submit" value="Use another account" /> */}
           </div>
 
-          {error && <p>{error.message}</p>}
+          {/* {error && <p>Passwords Don't Match</p>} */}
         </form>
       </div>
     );
