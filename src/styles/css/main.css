@@ -142,7 +142,7 @@ table {
       margin: auto;
       width: 208px; }
     .component-wrapper .form-wrapper .signup-wrapper .input-fields {
-      padding-bottom: 35px;
+      padding-bottom: 25px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -319,6 +319,9 @@ table {
 @media screen and (min-width: 667px) {
   .component-wrapper {
     width: 380px; } }
+#error-message {
+  margin-bottom: 15px; }
+
 .header-wrapper {
   color: #ffffff;
   text-align: center; }
