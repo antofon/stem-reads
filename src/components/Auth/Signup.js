@@ -101,7 +101,7 @@ class Signup extends Component {
               />
             </div>
           </div>
-          {error && <p id="error-message">{error.message}</p>}
+          {error && <p className="error-message">{error.message}</p>}
           <div className="sign-up-buttons">
             <input disabled={isInvalid} type="submit" value="Sign up" />
             {/* <div className="or-flex">
