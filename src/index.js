@@ -6,6 +6,7 @@ import Firebase, { FirebaseContext } from "./components/Firebase";
 import NotFound from "./components/NotFound";
 import AccountFaq from "./components/AccountFaq";
 import PreviewCollections from "./components/PreviewCollections";
+import Dashboard from "./components/Dashboard";
 import * as ROUTES from "./constants/routes";
 import * as serviceWorker from "./serviceWorker";
 
@@ -14,15 +15,21 @@ import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Router>
-    <Switch>
-      <FirebaseContext.Provider value={new Firebase()}>
+    <FirebaseContext.Provider value={new Firebase()}>
+      <Switch>
         <Route exact path={ROUTES.LANDING} component={App} />
-      </FirebaseContext.Provider>
-      <Route path={ROUTES.PREVIEW_COLLECTIONS} component={PreviewCollections} />
-      <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
-      <Route component={NotFound} />
-    </Switch>
+
+        <Route
+          path={ROUTES.PREVIEW_COLLECTIONS}
+          component={PreviewCollections}
+        />
+        <Route path={ROUTES.DASHBOARD} component={Dashboard} />
+        <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
+        <Route component={NotFound} />
+      </Switch>
+    </FirebaseContext.Provider>
   </Router>,
+
   document.getElementById("root")
 );
 
