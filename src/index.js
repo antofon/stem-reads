@@ -3,20 +3,20 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import App from "./App";
 import Firebase, { FirebaseContext } from "./components/Firebase";
-import NotFound from "./components/NotFound";
-import AccountFaq from "./components/AccountFaq";
-import PreviewCollections from "./components/PreviewCollections";
-import Dashboard from "./components/Dashboard";
-import * as ROUTES from "./constants/routes";
+// import NotFound from "./components/NotFound";
+// import AccountFaq from "./components/AccountFaq";
+// import PreviewCollections from "./components/PreviewCollections";
+// import Dashboard from "./components/Dashboard";
+// import * as ROUTES from "./constants/routes";
 import * as serviceWorker from "./serviceWorker";
 
 // Reference for connecting Firebase and React: https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/#react-router-setup
 // Firebase is only instantiated once (FirebaseContext) and that it is injected via React’s Context API to React’s component tree. Now, every component that is interested in using Firebase has access to the Firebase instance with a FirebaseContext.Consumer component.
 
 ReactDOM.render(
-  <Router>
-    <FirebaseContext.Provider value={new Firebase()}>
-      <Switch>
+  // <Router>
+  <FirebaseContext.Provider value={new Firebase()}>
+    {/* <Switch>
         <Route exact path={ROUTES.LANDING} component={App} />
 
         <Route
@@ -26,10 +26,10 @@ ReactDOM.render(
         <Route path={ROUTES.DASHBOARD} component={Dashboard} />
         <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
         <Route component={NotFound} />
-      </Switch>
-    </FirebaseContext.Provider>
-  </Router>,
-
+      </Switch> */}
+    <App />
+  </FirebaseContext.Provider>,
+  // {/* </Router> */}
   document.getElementById("root")
 );
 
