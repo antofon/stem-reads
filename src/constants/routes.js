@@ -6,4 +6,4 @@ export const PREVIEW_COLLECTIONS = "/preview-collections";
 export const ACCOUNT_FAQ = "/account-faq";
 export const ACCOUNT = "/account";
 export const PASSWORD_FORGET = "/pw-forget";
-export const NOT_FOUND = "/:homeId";
+// export const NOT_FOUND = "/:id";
