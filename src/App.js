@@ -12,10 +12,32 @@ import PreviewCollections from "./components/PreviewCollections";
 class App extends Component {
   render() {
     return (
-      <div className="app">
-        <Header />
-        <Landing />
-      </div>
+      <Router>
+        <div>
+          <div className="app">
+            <Header />
+          </div>
+          <Switch>
+            <Route
+              exact
+              path={ROUTES.LANDING}
+              render={props => (
+                // <div className="app">
+                <Landing />
+                // {/* <AuthenticateForm /> */}
+                // </div>
+              )}
+            />
+            <Route path={ROUTES.DASHBOARD} component={Dashboard} />
+            <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
+            <Route
+              path={ROUTES.PREVIEW_COLLECTIONS}
+              component={PreviewCollections}
+            />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
