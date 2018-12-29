@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import * as ROUTES from "../constants/routes";
+import Dashboard from "./Dashboard";
 const INITIAL_STATE = {
   username: "",
   email: "",
@@ -25,6 +28,7 @@ class Signup extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
+        this.props.history.push(ROUTES.DASHBOARD);
         console.log(
           `username: ${username}, email: ${email}, password: ${passwordOne}`
         );
@@ -56,7 +60,6 @@ class Signup extends Component {
                 name="username"
                 value={username}
                 onChange={this.onChange}
-                // placeholder="Full Name"
                 type="text"
                 id="username"
               />
@@ -69,7 +72,6 @@ class Signup extends Component {
                 name="email"
                 value={email}
                 onChange={this.onChange}
-                // placeholder="Email Address"
                 type="email"
                 id="email"
               />
@@ -82,7 +84,6 @@ class Signup extends Component {
                 name="passwordOne"
                 value={passwordOne}
                 onChange={this.onChange}
-                // placeholder="Full Name"
                 type="password"
                 id="pass"
               />
@@ -95,7 +96,6 @@ class Signup extends Component {
                 name="passwordTwo"
                 value={passwordTwo}
                 onChange={this.onChange}
-                // placeholder="Full Name"
                 type="password"
                 id="confirm-pass"
               />
@@ -119,4 +119,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withRouter(Signup);
