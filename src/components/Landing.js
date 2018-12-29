@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PreviewCollections from "./PreviewCollections";
-import AuthenticateForm from "./AuthenticateForm";
+import AuthenticateForm from "./Auth/AuthenticateForm";
 import AccountFaq from "./AccountFaq";
 import * as ROUTES from "../constants/routes";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
