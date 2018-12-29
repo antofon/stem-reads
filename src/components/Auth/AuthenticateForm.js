@@ -55,7 +55,9 @@ class AuthenticateForm extends Component {
     console.log(
       `LoginClicked -> Auth signup: ${
         this.state.showAuthSignup
-      } and Auth login:${this.state.showAuthLogin}`
+      } and Auth login:${this.state.showAuthLogin} and condition: ${
+        this.state.condition
+      }`
     );
   }
   render() {
@@ -100,7 +102,14 @@ class AuthenticateForm extends Component {
               )}
             </FirebaseContext.Consumer>
           ) : (
-            <Login authLogin={this.state.showAuthLogin} />
+            <FirebaseContext.Consumer>
+              {firebase => (
+                <Login
+                  authLogin={this.state.showAuthLogin}
+                  firebase={firebase}
+                />
+              )}
+            </FirebaseContext.Consumer>
           )}
 
           {/* {this.state.authUser ? <Login /> : <Signup />} */}
