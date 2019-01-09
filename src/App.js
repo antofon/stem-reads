@@ -8,6 +8,7 @@ import NotFound from "./components/NotFound";
 import Dashboard from "./components/Dashboard";
 import AccountFaq from "./components/AccountFaq";
 import PreviewCollections from "./components/PreviewCollections";
+import SignupSuccess from "./components/Auth/SignupSuccess";
 
 class App extends Component {
   render() {
@@ -30,6 +31,7 @@ class App extends Component {
             />
             <Route path={ROUTES.DASHBOARD} component={Dashboard} />
             <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
+            <Route path={ROUTES.SIGN_UP} component={SignupSuccess} />
             <Route
               path={ROUTES.PREVIEW_COLLECTIONS}
               component={PreviewCollections}

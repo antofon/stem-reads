@@ -1,5 +1,5 @@
 export const LANDING = "/";
-export const SIGN_UP = "/signup";
+export const SIGN_UP = "/signup-success";
 export const LOG_IN = "/login";
 export const DASHBOARD = "/dashboard";
 export const PREVIEW_COLLECTIONS = "/preview-collections";

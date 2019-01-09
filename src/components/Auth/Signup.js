@@ -28,7 +28,7 @@ class Signup extends Component {
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.DASHBOARD);
+        this.props.history.push(ROUTES.SIGN_UP);
         console.log(
           `username: ${username}, email: ${email}, password: ${passwordOne}`
         );
