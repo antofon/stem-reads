@@ -10,18 +10,18 @@ class Dashboard extends Component {
         <h2>Welcome to the Dashboard!!!!</h2>
         <FirebaseContext.Consumer>
           {firebase => (
-            <button
-              type="submit"
+            <input
+              type="button"
               firebase={firebase}
+              value="Sign out"
               id="Sign out"
               onClick={() => {
-                firebase.doSignOut(() =>
-                  this.props.history.push(ROUTES.LANDING)
-                );
+                firebase.doSignOut(() => {
+                  console.log("Sign out clicked");
+                  this.props.history.push(ROUTES.LANDING);
+                });
               }}
-            >
-              Sign out
-            </button>
+            />
           )}
         </FirebaseContext.Consumer>
       </div>
