@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import app from "../../Firebase/firebase";
 import * as ROUTES from "../../constants/routes";
-import Dashboard from "../Dashboard";
+
 const INITIAL_STATE = {
   username: "",
   email: "",
@@ -24,11 +25,12 @@ class Signup extends Component {
   onSubmit = event => {
     const { username, email, passwordOne } = this.state;
 
-    this.props.firebase
-      .doCreateUserWithEmailAndPassword(email, passwordOne)
+    app
+      .auth()
+      .createUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.SIGN_UP);
+        this.props.history.push(ROUTES.SIGN_UP_SUCCESS);
         console.log(
           `username: ${username}, email: ${email}, password: ${passwordOne}`
         );
