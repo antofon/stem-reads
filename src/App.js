@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import app from "./Firebase/firebase";
+import app, { database } from "./Firebase/firebase";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -29,7 +29,11 @@ class App extends Component {
     app.auth().onAuthStateChanged(user => {
       if (user) {
         // user is currently [object Object]. can wrap this in JSON.stringify() to break down object and see key-value pairs
-        console.log(`User logged in: ${user}`);
+        console.log(`User logged in: ${JSON.stringify(user, null, 2)}`);
+        database.ref("users/" + 1).set({
+          username: app.auth().currentUser.uid,
+          email: app.auth().currentUser.email
+        });
         this.setState({ user });
         //prints potential user name of logged in user
         console.log(app.auth().currentUser.displayName);
