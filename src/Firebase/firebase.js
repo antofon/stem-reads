@@ -36,4 +36,7 @@ const config = {
 
 const app = firebase.initializeApp(config);
 
+// Get a reference to the database service
+var database = firebase.database();
 export default app;
+export { database };
