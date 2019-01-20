@@ -11,27 +11,30 @@ class BookList extends Component {
     return (
       <div>
         <div>
-          {this.props.type === "non-fiction" ? (
-            <div>
-              <Book books={this.books} />
-              <Book books={this.books} />
-              <Book books={this.books} />
-              <Book books={this.books} />
-              <Book books={this.books} />
-            </div>
-          ) : null}
+          {this.props.type ? (
+            // <div>
+            // <ul>
+            //   {Object.keys(this.props.books).map(key => (
+            //     <Book key={key} books={this.props} />
+            //   ))}
+            // </ul>
+            <Book books={this.props.books} />
+          ) : (
+            console.log("Type not valid")
+          )}
         </div>
 
         <div>
           {this.props.type === "fiction" ? (
-            <div>
-              <Book books={this.books} />
-              <Book books={this.books} />
-              <Book books={this.books} />
-              <Book books={this.books} />
-              <Book books={this.books} />
-            </div>
-          ) : null}
+            // <div>
+            <ul>
+              {Object.keys(this.props.books).map(key => (
+                <Book key={key} />
+              ))}
+            </ul>
+          ) : (
+            console.log("Type not valid")
+          )}
         </div>
       </div>
     );
