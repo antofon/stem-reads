@@ -1,4 +1,6 @@
 import firebase from "firebase";
+import Rebase from "re-base";
+
 // import app from "firebase/app";
 // import "firebase/auth";
 
@@ -36,7 +38,8 @@ const config = {
 
 const app = firebase.initializeApp(config);
 
+const base = Rebase.createClass(app.database());
 // Get a reference to the database service
-var database = firebase.database();
+// var database = firebase.database();
+export { base };
 export default app;
-export { database };
