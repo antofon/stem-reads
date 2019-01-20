@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import app, { database } from "./Firebase/firebase";
+import app, { base } from "./Firebase/firebase";
+import bookData from "./book-data";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,26 +16,40 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {}
+      user: {},
+      books: {}
     };
   }
 
   componentDidMount() {
     //when component is first mounted to page (rendered for the first time)
+
     this.authListener();
   }
 
+  renderBooks(book) {
+    // this.setState({ books: this.state.books.concat([book]) });
+    alert("renderBooks called!");
+  }
+
+  loadBooks = () => {
+    this.setState({ books: bookData });
+  };
   // checks if the authentication state of a user changes (i.e. logged in)
   authListener() {
     app.auth().onAuthStateChanged(user => {
       if (user) {
         // user is currently [object Object]. can wrap this in JSON.stringify() to break down object and see key-value pairs
-        console.log(`User logged in: ${JSON.stringify(user, null, 2)}`);
-        database.ref("users/" + 1).set({
-          username: app.auth().currentUser.uid,
-          email: app.auth().currentUser.email
-        });
+        // console.log(`User logged in: ${JSON.stringify(user, null, 2)}`);
+        // database.ref("users/" + 1).set({
+        //   username: app.auth().currentUser.uid,
+        //   email: app.auth().currentUser.email
+        // });
         this.setState({ user });
+        // this.ref = base.syncState(`/${app.auth().currentUser.uid}/books`, {
+        //   context: this,
+        //   state: "books"
+        // });
         //prints potential user name of logged in user
         console.log(app.auth().currentUser.displayName);
         //localStorage.setItem('user', user.uid);
@@ -54,7 +69,19 @@ class App extends Component {
             {/* check if user is logged in or not, protecting certain routes from being accessed */}
             {this.state.user ? (
               <Switch>
-                <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+                <Route
+                  exact
+                  path={ROUTES.DASHBOARD}
+                  render={props => (
+                    <Dashboard
+                      renderBooks={this.renderBooks}
+                      loadBooks={this.loadBooks}
+                      books={this.state.books}
+                      // renderBooks={this.renderBooks.bind(this)}
+                      // {...props}
+                    />
+                  )}
+                />
                 <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
                 <Route
                   path={ROUTES.SIGN_UP_SUCCESS}
