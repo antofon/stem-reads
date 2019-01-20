@@ -17,7 +17,7 @@ class App extends Component {
     super(props);
     this.state = {
       user: {},
-      books: {}
+      books: bookData
     };
   }
 
@@ -75,7 +75,7 @@ class App extends Component {
                   render={props => (
                     <Dashboard
                       renderBooks={this.renderBooks}
-                      loadBooks={this.loadBooks}
+                      // loadBooks={this.loadBooks}
                       books={this.state.books}
                       // renderBooks={this.renderBooks.bind(this)}
                       // {...props}
