@@ -4,7 +4,7 @@ const books = {
     author: "Duncan Clark",
     title: "Alibaba. The House That Jack Ma Built",
     type: "non-fiction",
-    image: "../public/images/alibaba_the_house_that_jack_ma_built.jpg"
+    image: "/images/real/alibaba_the_house_that_jack_ma_built.jpg"
   },
 
   book2: {
@@ -12,7 +12,7 @@ const books = {
     author: "Kevin Mitnick with William L. Simon",
     title: "Ghost in the Wires",
     type: "non-fiction",
-    image: "../public/images/ghost_in_the_wires.jpg"
+    image: "/images/real/ghost_in_the_wires.jpg"
   },
 
   book3: {
@@ -21,7 +21,7 @@ const books = {
     title: "Grace Hopper, and the Invention of the Information Age",
     type: "non-fiction",
     image:
-      "../public/images/grace_hopper_and_the_invention_of_the_information_age.jpg"
+      "/images/real/grace_hopper_and_the_invention_of_the_information_age.jpg"
   },
 
   book4: {
@@ -29,7 +29,7 @@ const books = {
     author: "Margot Lee Shetterly",
     title: "Hidden Figures",
     type: "non-fiction",
-    image: "../public/images/hidden_figures.jpg"
+    image: "/images/real/hidden_figures.jpg"
   },
 
   book5: {
@@ -37,7 +37,7 @@ const books = {
     author: "Roda Ahmed",
     title: "Mae Among The Stars",
     type: "illustrated",
-    image: "../public/images/mae_among_the_stars.jpg"
+    image: "/images/illustrated/mae_among_the_stars.jpg"
   },
 
   book6: {
@@ -45,7 +45,7 @@ const books = {
     author: "Rachel Ignotofsky",
     title: "Women in Science, 50 Fearless Pioneers who Changed the World",
     type: "illustrated",
-    image: "../public/images/women_in_science_pioneers.jpg"
+    image: "/images/illustrated/women_in_science_pioneers.jpg"
   },
 
   book7: {
@@ -53,7 +53,7 @@ const books = {
     author: "Julia Finley Mosca",
     title: "The Doctor with an Eye for Eyes. The Story of Dr. Patricia Bath",
     type: "illustrated",
-    image: "../public/images/the_doctor_with_an_eye_for_eyes.jpg"
+    image: "/images/illustrated/the_doctor_with_an_eye_for_eyes.jpg"
   },
 
   book8: {
@@ -61,7 +61,7 @@ const books = {
     author: "Julia Finley Mosca",
     title: "The Girl with a Mind for Math. The Story of Raye Montague.",
     type: "illustrated",
-    image: "../public/images/the_girl_with_a_mind_for_math.jpg"
+    image: "/images/illustrated/the_girl_with_a_mind_for_math.jpg"
   }
 };
 
