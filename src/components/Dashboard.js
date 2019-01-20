@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import app from "../Firebase/firebase";
+import BookList from "./BookList";
 import * as ROUTES from "../constants/routes";
 
 class Dashboard extends Component {
@@ -15,6 +16,12 @@ class Dashboard extends Component {
       <div>
         <h2>Welcome to the Dashboard!!!!</h2>
 
+        <button onClick={this.props.renderBooks}>Click Me</button>
+        <div className="books-wrapper" />
+        <div>Autobiography &amp; Non-Fiction</div>
+        <BookList type="non-fiction" />
+        <div>Fiction</div>
+        <BookList type="fiction" />
         <input
           type="button"
           value="Sign out"
