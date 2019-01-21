@@ -10,7 +10,10 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
-      type: "non-fiction"
+      genres: {
+        type1: "real",
+        type2: "illustrated"
+      }
     };
   }
   signOut = () => {
@@ -27,12 +30,15 @@ class Dashboard extends Component {
         {/* <button onClick={this.props.loadBooks}>Load Books</button> */}
         <div className="books-wrapper" />
         <div>Autobiography &amp; Non-Fiction</div>
-        {Object.keys(this.props.books).map(key => (
-          <Book key={key} index={key} details={this.props.books[key]} />
-        ))}
-        {/* <BookList books={this.state.books} type={this.state.type} /> */}
+        <BookList
+          genres={this.state.genres}
+          bookData={this.props.realBookData}
+        />
         <div>Fiction</div>
-        {/* <BookList books={this.state.books} type={this.state.type} /> */}
+        <BookList
+          genres={this.state.genres}
+          bookData={this.props.illustratedBookData}
+        />
         <input
           type="button"
           value="Sign out"
