@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import app, { base } from "./Firebase/firebase";
-import bookData from "./book-data";
+import realBookData from "./real-book-data";
+import illustratedBookData from "./illustrated-book-data";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -17,7 +18,8 @@ class App extends Component {
     super(props);
     this.state = {
       user: {},
-      books: bookData
+      realBookData: realBookData,
+      illustratedBookData: illustratedBookData
     };
   }
 
@@ -33,7 +35,7 @@ class App extends Component {
   }
 
   loadBooks = () => {
-    this.setState({ books: bookData });
+    this.setState({ realBookData, illustratedBookData });
   };
   // checks if the authentication state of a user changes (i.e. logged in)
   authListener() {
@@ -76,7 +78,8 @@ class App extends Component {
                     <Dashboard
                       renderBooks={this.renderBooks}
                       // loadBooks={this.loadBooks}
-                      books={this.state.books}
+                      realBookData={this.state.realBookData}
+                      illustratedBookData={this.state.illustratedBookData}
                       // renderBooks={this.renderBooks.bind(this)}
                       // {...props}
                     />
