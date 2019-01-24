@@ -28,17 +28,26 @@ class Dashboard extends Component {
         <h2>Welcome to the Dashboard!!!!</h2>
         {/* {this.props.loadBooks} */}
         {/* <button onClick={this.props.loadBooks}>Load Books</button> */}
-        <div className="books-wrapper" />
-        <div>Autobiography &amp; Non-Fiction</div>
-        <BookList
-          genres={this.state.genres}
-          bookData={this.props.realBookData}
-        />
-        <div>Fiction</div>
-        <BookList
-          genres={this.state.genres}
-          bookData={this.props.illustratedBookData}
-        />
+        <div className="books-wrapper">
+          <div>
+            {/* <h3>Autobiography &amp; Non-Fiction</h3> */}
+            <BookList
+              genres={this.state.genres}
+              bookData={this.props.bookData}
+              // realBookData={this.props.realBookData}
+              // illustratedBookData={this.props.illustratedBookData}
+            />
+          </div>
+          {/* <div>
+            {/* <h3>Illustrated</h3>
+            <BookList
+              genres={this.state.genres}
+              bookData={this.props.bookData}
+               realBookData={this.props.realBookData}
+               illustratedBookData={this.props.illustratedBookData}
+            />
+          </div> */}
+        </div>
         <input
           type="button"
           value="Sign out"
