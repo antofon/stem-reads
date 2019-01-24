@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import app, { base } from "./Firebase/firebase";
+import bookData from "./book-data";
 import realBookData from "./real-book-data";
 import illustratedBookData from "./illustrated-book-data";
 import Header from "./components/Header";
@@ -18,8 +19,9 @@ class App extends Component {
     super(props);
     this.state = {
       user: {},
-      realBookData: realBookData,
-      illustratedBookData: illustratedBookData
+      bookData: bookData
+      // realBookData: realBookData,
+      // illustratedBookData: illustratedBookData
     };
   }
 
@@ -35,7 +37,8 @@ class App extends Component {
   }
 
   loadBooks = () => {
-    this.setState({ realBookData, illustratedBookData });
+    // this.setState({ realBookData, illustratedBookData });
+    this.setState({ bookData });
   };
   // checks if the authentication state of a user changes (i.e. logged in)
   authListener() {
@@ -78,8 +81,9 @@ class App extends Component {
                     <Dashboard
                       renderBooks={this.renderBooks}
                       // loadBooks={this.loadBooks}
-                      realBookData={this.state.realBookData}
-                      illustratedBookData={this.state.illustratedBookData}
+                      bookData={this.state.bookData}
+                      // realBookData={this.state.realBookData}
+                      // illustratedBookData={this.state.illustratedBookData}
                       // renderBooks={this.renderBooks.bind(this)}
                       // {...props}
                     />
