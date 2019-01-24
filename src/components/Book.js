@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Book extends Component {
   render() {
-    const { id, author, title, type, image } = this.props.details;
+    const { author, title, image } = this.props.details;
     return (
       <figure>
         <img src={image} alt={title} />
