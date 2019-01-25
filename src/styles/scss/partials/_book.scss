@@ -1,7 +1,104 @@
 //BOOK AND BOOKLIST COMPONENTS
 
-.books-wrapper {
+.book-list-wrapper {
+  display: flex;
 }
+.books-wrapper {
+  h3 {
+    margin-left: 2.2%;
+  }
+}
+.real-book-list-wrapper {
+  // width: 280px;
+  // height: auto;
+  // vertical-align: middle;
+
+  display: flex;
+
+  .book-image {
+    width: 250px;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  figure {
+    // width: 202px;
+    width: 100%;
+    margin: 0;
+    figcaption {
+      text-align: center;
+    }
+  }
+
+  div {
+    ul {
+      width: 83%;
+      margin: auto;
+    }
+  }
+  div:first-child {
+    flex: 1.3344;
+  }
+  div:nth-child(2) {
+    flex: 1.3344;
+  }
+  div:nth-child(3) {
+    flex: 1.3344;
+  }
+
+  div:last-child {
+    flex: 1.3344;
+  }
+}
+.illustrated-book-list-wrapper {
+  // width: 100%;
+  // height: auto;
+  // vertical-align: middle;
+  // display: flex;
+  // width: 280px;
+  // height: auto;
+  // vertical-align: middle;
+
+  display: flex;
+
+  .book-image {
+    width: 250px;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+  div {
+    ul {
+      width: 83%;
+      margin: auto;
+    }
+  }
+  figure {
+    // width: 202px;
+    width: 100%;
+    margin: 0;
+    figcaption {
+      text-align: center;
+    }
+  }
+  div:first-child {
+    flex: 1.3344;
+  }
+  div:nth-child(2) {
+    flex: 1.3344;
+  }
+  div:nth-child(3) {
+    flex: 1.3344;
+  }
+
+  div:last-child {
+    flex: 1.3344;
+  }
+}
+
+// .book-image {
+//   width: 100%;
+//   height: auto;
+//   vertical-align: middle;
+// }
 
 .float-left {
   // float: left;
