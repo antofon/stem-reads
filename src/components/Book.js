@@ -5,10 +5,10 @@ class Book extends Component {
     const { author, title, image } = this.props.details;
     return (
       <figure>
-        <img src={image} alt={title} />
+        <img className="book-image" src={image} alt={title} />
         <figcaption>
-          <p>{title}</p>
-          <p>{author}</p>
+          <p className="book-title">{title}</p>
+          <p className="book-author">{author}</p>
         </figcaption>
       </figure>
     );
