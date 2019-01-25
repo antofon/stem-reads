@@ -76,9 +76,12 @@ class BookList extends Component {
     return (
       <div>
         <h3>Autobiography &amp; Non-Fiction</h3>
-        {realListElt}
+        <div className="real-book-list-wrapper">{realListElt}</div>
+
         <h3>Illustrated</h3>
-        {illustratedListElt}
+        <div className="illustrated-book-list-wrapper">
+          {illustratedListElt}
+        </div>
         {/* <ul>
           {this.props.genres.type1 === "real"
             ? Object.keys(this.props.bookData).map(key => (
