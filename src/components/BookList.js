@@ -75,10 +75,10 @@ class BookList extends Component {
     // console.log(this.props.bookData.);
     return (
       <div>
-        <h3>Autobiography &amp; Non-Fiction</h3>
+        <h3 class="non-fiction">Autobiography &amp; Non-Fiction</h3>
         <div className="real-book-list-wrapper">{realListElt}</div>
 
-        <h3>Illustrated</h3>
+        <h3 class="illustrated">Illustrated</h3>
         <div className="illustrated-book-list-wrapper">
           {illustratedListElt}
         </div>
