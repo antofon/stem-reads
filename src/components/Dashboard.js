@@ -25,7 +25,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <h2>Welcome to the Dashboard!!!!</h2>
+        {/* <h2>Welcome to the Dashboard!!!!</h2> */}
         {/* {this.props.loadBooks} */}
         {/* <button onClick={this.props.loadBooks}>Load Books</button> */}
         <div className="books-wrapper">
