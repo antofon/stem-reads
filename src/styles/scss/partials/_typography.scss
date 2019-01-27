@@ -1,2 +1,9 @@
 $segoe: "Segoe UI";
 $comfortaa: "Comfortaa", cursive;
+%dashboard-subtitle {
+  font-family: $segoe;
+  font-weight: 500;
+  color: $bg-gray;
+  letter-spacing: 0.3px;
+  margin-bottom: 20px;
+}
