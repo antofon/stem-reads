@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import app, { base } from "./Firebase/firebase";
-import bookData from "./book-data";
-import realBookData from "./real-book-data";
-import illustratedBookData from "./illustrated-book-data";
-import Header from "./components/Header";
-import Landing from "./components/Landing";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
+import bookData from "./book-data";
 import "./styles/css/main.css";
+import Header from "./components/Header";
+import Landing from "./components/Landing";
 import NotFound from "./components/NotFound";
 import Dashboard from "./components/Dashboard";
 import AccountFaq from "./components/AccountFaq";
@@ -17,36 +15,49 @@ import SignupSuccess from "./components/Auth/SignupSuccess";
 class App extends Component {
   constructor(props) {
     super(props);
+    // this.loadBooks = this.loadBooks.bind(this);
     this.state = {
       user: {},
-      bookData: bookData
-      // realBookData: realBookData,
-      // illustratedBookData: illustratedBookData
+      books: {}
     };
   }
 
+  loadBooks = (title, author) => {
+    const books = { ...this.state.books };
+    const id = Date.now();
+    books[id] = {
+      id: id,
+      title: title,
+      author: author
+    };
+    this.setState({ books: bookData });
+  };
+
   componentDidMount() {
     //when component is first mounted to page (rendered for the first time)
-
     this.authListener();
   }
 
-  renderBooks(book) {
-    // this.setState({ books: this.state.books.concat([book]) });
-    alert("renderBooks called!");
+  componentWillMount() {
+    this.userRef = base.syncState("books", {
+      context: this,
+      state: "books"
+    });
   }
 
-  loadBooks = () => {
-    // this.setState({ realBookData, illustratedBookData });
-    this.setState({ bookData });
-  };
+  componentWillUnmount() {
+    base.removeBinding(this.userRef);
+  }
+
   // checks if the authentication state of a user changes (i.e. logged in)
   authListener() {
     app.auth().onAuthStateChanged(user => {
       if (user) {
         // user is currently [object Object]. can wrap this in JSON.stringify() to break down object and see key-value pairs
-        // console.log(`User logged in: ${JSON.stringify(user, null, 2)}`);
-        // database.ref("users/" + 1).set({
+        // console.log(`User logged in: ${JSON.stringify(user, null, 2)}`)
+        // let userCount = 0;
+        // userCount++;
+        // base.ref("users/" + userCount).set({
         //   username: app.auth().currentUser.uid,
         //   email: app.auth().currentUser.email
         // });
@@ -57,11 +68,9 @@ class App extends Component {
         // });
         //prints potential user name of logged in user
         console.log(app.auth().currentUser.displayName);
-        //localStorage.setItem('user', user.uid);
       } else {
         console.log(`User not logged in: ${user}`);
         this.setState({ user: null });
-        //localStorage.setItem('user', user.uid);
       }
     });
   }
@@ -79,13 +88,8 @@ class App extends Component {
                   path={ROUTES.DASHBOARD}
                   render={props => (
                     <Dashboard
-                      renderBooks={this.renderBooks}
-                      // loadBooks={this.loadBooks}
-                      bookData={this.state.bookData}
-                      // realBookData={this.state.realBookData}
-                      // illustratedBookData={this.state.illustratedBookData}
-                      // renderBooks={this.renderBooks.bind(this)}
-                      // {...props}
+                      books={this.state.books}
+                      loadBooks={this.loadBooks}
                     />
                   )}
                 />
