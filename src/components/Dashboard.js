@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import app from "../Firebase/firebase";
-import BookList from "./BookList";
-import Book from "./Book";
 import * as ROUTES from "../constants/routes";
+import BookList from "./BookList";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -26,27 +25,11 @@ class Dashboard extends Component {
     return (
       <div>
         {/* <h2>Welcome to the Dashboard!!!!</h2> */}
-        {/* {this.props.loadBooks} */}
-        {/* <button onClick={this.props.loadBooks}>Load Books</button> */}
+        <button onClick={this.props.loadBooks}>Load Books</button>
         <div className="books-wrapper">
           <div>
-            {/* <h3>Autobiography &amp; Non-Fiction</h3> */}
-            <BookList
-              genres={this.state.genres}
-              bookData={this.props.bookData}
-              // realBookData={this.props.realBookData}
-              // illustratedBookData={this.props.illustratedBookData}
-            />
+            <BookList genres={this.state.genres} books={this.props.books} />
           </div>
-          {/* <div>
-            {/* <h3>Illustrated</h3>
-            <BookList
-              genres={this.state.genres}
-              bookData={this.props.bookData}
-               realBookData={this.props.realBookData}
-               illustratedBookData={this.props.illustratedBookData}
-            />
-          </div> */}
         </div>
         <input
           type="button"
