@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
 import Book from "./Book";
-import { FaLevelDownAlt } from "react-icons/fa";
 
 class BookList extends Component {
   constructor(props) {
@@ -22,22 +20,18 @@ class BookList extends Component {
     Pass that through the return
     complete.
     */
-    let realBookDataArr = Object.keys(this.props.bookData).slice(0, 4);
-    let illustratedBookDataArr = Object.keys(this.props.bookData).slice(4, 8);
+    let realBookDataArr = Object.keys(this.props.books).slice(0, 4);
+    let illustratedBookDataArr = Object.keys(this.props.books).slice(4, 8);
     let realListElt = [],
       illustratedListElt = [];
 
     if (this.props.genres.type1 === "real") {
       realBookDataArr.map(key =>
         realListElt.push(
-          <div>
+          <div key={key}>
             <ul>
               <li key={key} className="float-left">
-                <Book
-                  key={key}
-                  index={key}
-                  details={this.props.bookData[key]}
-                />
+                <Book key={key} index={key} details={this.props.books[key]} />
               </li>
             </ul>
           </div>
@@ -48,61 +42,25 @@ class BookList extends Component {
     if (this.props.genres.type2 === "illustrated") {
       illustratedBookDataArr.map(key =>
         illustratedListElt.push(
-          <div>
+          <div key={key}>
             <ul>
               <li key={key} className="float-left">
-                <Book
-                  key={key}
-                  index={key}
-                  details={this.props.bookData[key]}
-                />
+                <Book key={key} index={key} details={this.props.books[key]} />
               </li>
             </ul>
           </div>
         )
       );
     }
-    // const realBookDataObj = Object.assign({}, realBookDataArr);
-    // const illustratedBookDataObj = Object.assign({}, illustratedBookDataArr);
-    // console.log(realBookDataObj);
-    // console.log(illustratedBookDataObj);
-    // console.log(
-    //   `RealBookData:${realBookData.author}\nIllustratedBookData:${
-    //     illustratedBookData.author
-    //   }`
-    // );
 
-    // console.log(this.props.bookData.);
     return (
       <div>
-        <h3 class="non-fiction">Autobiography &amp; Non-Fiction</h3>
+        <h3 className="non-fiction">Autobiography &amp; Non-Fiction</h3>
         <div className="real-book-list-wrapper">{realListElt}</div>
-
-        <h3 class="illustrated">Illustrated</h3>
+        <h3 className="illustrated">Illustrated</h3>
         <div className="illustrated-book-list-wrapper">
           {illustratedListElt}
         </div>
-        {/* <ul>
-          {this.props.genres.type1 === "real"
-            ? Object.keys(this.props.bookData).map(key => (
-                <li key={key} className="float-left">
-                  <Book
-                    key={key}
-                    index={key}
-                    details={this.props.bookData[key]}
-                  />
-                </li>
-              ))
-            : Object.keys(this.props.bookData).map(key => (
-                <li key={key}>
-                  <Book
-                    key={key}
-                    index={key}
-                    details={this.props.bookData[key]}
-                  />
-                </li>
-              ))}
-        </ul> */}
       </div>
     );
   }
