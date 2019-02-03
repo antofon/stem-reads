@@ -34,7 +34,19 @@ class App extends Component {
     this.setState({ books });
   };
 
-  removeBooks = () => {
+  addBook = book => {
+    const books = { ...this.state.books };
+    books[`book${Date.now()}`] = book;
+    this.setState({ books });
+  };
+
+  deleteBook = key => {
+    const books = { ...this.state.books };
+    books[key] = null;
+    this.setState({ books });
+  };
+
+  clearBooks = () => {
     this.setState({ books: "" });
   };
 
@@ -134,9 +146,12 @@ class App extends Component {
                   path={ROUTES.DASHBOARD}
                   render={props => (
                     <Dashboard
+                      username={this.state.user.email}
                       books={this.state.books}
                       loadBooks={this.loadBooks}
-                      removeBooks={this.removeBooks}
+                      addBook={this.addBook}
+                      deleteBook={this.deleteBook}
+                      clearBooks={this.clearBooks}
                     />
                   )}
                 />
