@@ -25,13 +25,18 @@ class BookList extends Component {
     let realListElt = [],
       illustratedListElt = [];
 
-    if (this.props.genres.type1 === "real") {
+    if (this.props.type1) {
       realBookDataArr.map(key =>
         realListElt.push(
           <div key={key}>
             <ul>
               <li key={key} className="float-left">
-                <Book key={key} index={key} details={this.props.books[key]} />
+                <Book
+                  key={key}
+                  index={key}
+                  details={this.props.books[key]}
+                  deleteBook={this.props.deleteBook}
+                />
               </li>
             </ul>
           </div>
@@ -39,13 +44,18 @@ class BookList extends Component {
       );
     }
 
-    if (this.props.genres.type2 === "illustrated") {
+    if (this.props.type2) {
       illustratedBookDataArr.map(key =>
         illustratedListElt.push(
           <div key={key}>
             <ul>
               <li key={key} className="float-left">
-                <Book key={key} index={key} details={this.props.books[key]} />
+                <Book
+                  key={key}
+                  index={key}
+                  details={this.props.books[key]}
+                  deleteBook={this.props.deleteBook}
+                />
               </li>
             </ul>
           </div>
@@ -55,9 +65,8 @@ class BookList extends Component {
 
     return (
       <div>
-        <h3 className="non-fiction">Autobiography &amp; Non-Fiction</h3>
         <div className="real-book-list-wrapper">{realListElt}</div>
-        <h3 className="illustrated">Illustrated</h3>
+
         <div className="illustrated-book-list-wrapper">
           {illustratedListElt}
         </div>
