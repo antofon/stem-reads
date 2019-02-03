@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import app, { base } from "./Firebase/firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
-import bookData from "./book-data";
+import books from "./book-data";
 import "./styles/css/main.css";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
@@ -23,30 +23,72 @@ class App extends Component {
   }
 
   loadBooks = (title, author) => {
-    const books = { ...this.state.books };
-    const id = Date.now();
-    books[id] = {
-      id: id,
-      title: title,
-      author: author
-    };
-    this.setState({ books: bookData });
+    // const books = { ...this.state.books };
+    // const id = Date.now();
+    // books[id] = {
+    //   id: id,
+    //   title: title,
+    //   author: author
+    // };
+    // console.log(`${this.state.user.uid}`);
+    this.setState({ books });
   };
 
-  componentDidMount() {
+  removeBooks = () => {
+    this.setState({ books: "" });
+  };
+
+  componentDidMount = () => {
     //when component is first mounted to page (rendered for the first time)
-    this.authListener();
-  }
+    //  this.authListener();
+
+    app.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.setState({ user });
+
+        // const books = {{ ...this.state.books} };
+        // console.log(`Books: ${books}`);
+        console.log(`User: ${this.state.user.uid}`);
+        this.ref = base.syncState(`users/${this.state.user.uid}`, {
+          context: this,
+          state: "books"
+        });
+        console.log(`User logged in: ${user}`);
+      } else {
+        console.log(`User not logged in: ${user}`);
+        this.setState({ user: null });
+      }
+    });
+
+    // console.log(`${this.state.user.uid}`);
+
+    console.log("DID MOUNTED");
+    // this.setState({ books: bookData });
+  };
 
   componentWillMount() {
-    this.userRef = base.syncState("books", {
-      context: this,
-      state: "books"
-    });
+    console.log("Will MOUNTED");
+    // this.userRef = base.syncState(`${this.state.user.email}/books`, {
+    //   context: this,
+    //   state: "books"
+    // });
+    // this.userRef = base.syncState(`${this.state.user.email}/books`, {
+    //   context: this,
+    //   state: "books"
+    // });
+
+    // this.ref = base.syncState(`/books`, {
+    //   context: this,
+    //   state: "books"
+    // });
+
+    // this.setState({ books: bookData });
+    console.log(`User state in AUTH function: ${this.state.user.uid}`);
   }
 
   componentWillUnmount() {
-    base.removeBinding(this.userRef);
+    base.removeBinding(this.ref);
+    console.log(`Unmounting!!!!!!!`);
   }
 
   // checks if the authentication state of a user changes (i.e. logged in)
@@ -61,13 +103,17 @@ class App extends Component {
         //   username: app.auth().currentUser.uid,
         //   email: app.auth().currentUser.email
         // });
+
         this.setState({ user });
+
+        // console.log(`User state in AUTH function: ${this.state.user.uid}`);
         // this.ref = base.syncState(`/${app.auth().currentUser.uid}/books`, {
         //   context: this,
         //   state: "books"
         // });
+
         //prints potential user name of logged in user
-        console.log(app.auth().currentUser.displayName);
+        // console.log(app.auth().currentUser.displayName);
       } else {
         console.log(`User not logged in: ${user}`);
         this.setState({ user: null });
@@ -90,6 +136,7 @@ class App extends Component {
                     <Dashboard
                       books={this.state.books}
                       loadBooks={this.loadBooks}
+                      removeBooks={this.removeBooks}
                     />
                   )}
                 />
