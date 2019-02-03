@@ -26,6 +26,7 @@ class Dashboard extends Component {
       <div>
         {/* <h2>Welcome to the Dashboard!!!!</h2> */}
         <button onClick={this.props.loadBooks}>Load Books</button>
+        <button onClick={this.props.removeBooks}>Remove Books</button>
         <div className="books-wrapper">
           <div>
             <BookList genres={this.state.genres} books={this.props.books} />
