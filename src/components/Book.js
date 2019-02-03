@@ -10,6 +10,7 @@ const Book = props => {
         <p className="book-title">{title}</p>
         <p className="book-author">{author}</p>
       </figcaption>
+      <button onClick={() => props.deleteBook(props.index)}>Delete Book</button>
     </figure>
   );
 };
