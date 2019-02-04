@@ -61,11 +61,14 @@ class App extends Component {
         // const books = {{ ...this.state.books} };
         // console.log(`Books: ${books}`);
         console.log(`User: ${this.state.user.uid}`);
+        console.log(`All user info: ${user}`);
         this.ref = base.syncState(`users/${this.state.user.uid}`, {
           context: this,
           state: "books"
         });
-        console.log(`User logged in: ${user}`);
+        console.log(
+          `User logged in: ${JSON.stringify(this.state.user, null, 2)}`
+        );
       } else {
         console.log(`User not logged in: ${user}`);
         this.setState({ user: null });
