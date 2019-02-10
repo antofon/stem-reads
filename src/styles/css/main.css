@@ -362,6 +362,14 @@ table {
       font-size: 24px;
       padding: 0 50px; } }
 
+.books-wrapper .book-buttons a, .books-wrapper .book-buttons button {
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Segoe UI";
+  transition: 0.3s all; }
+
 .book-list-wrapper {
   display: flex;
   flex-direction: column;
@@ -374,6 +382,28 @@ table {
     font-size: 6vw; }
   .books-wrapper .illustrated {
     margin-top: 80px; }
+  .books-wrapper .book-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 30px; }
+    .books-wrapper .book-buttons a {
+      background: #1273fa;
+      color: #ffffff;
+      text-decoration: none;
+      text-align: center; }
+      .books-wrapper .book-buttons a:hover {
+        background: #ffffff;
+        color: #1273fa; }
+    .books-wrapper .book-buttons button {
+      background: #f91587;
+      color: #ffffff;
+      margin-top: 20px;
+      border: none; }
+      .books-wrapper .book-buttons button:hover {
+        background: #ffffff;
+        color: #f91587; }
 
 .book-author {
   margin-top: 10px;
@@ -452,6 +482,8 @@ table {
     font-size: 3vw;
     margin-left: 2.2%;
     text-align: initial; }
+  .books-wrapper .book-buttons {
+    width: 70%; }
 
   .real-book-list-wrapper,
   .illustrated-book-list-wrapper {
@@ -463,9 +495,14 @@ table {
     .real-book-list-wrapper div,
     .illustrated-book-list-wrapper div {
       text-align: center; } }
+@media screen and (min-width: 800px) {
+  .books-wrapper .book-buttons {
+    width: 58%; } }
 @media screen and (min-width: 1008px) {
   .books-wrapper h3 {
-    font-size: 22px; } }
+    font-size: 22px; }
+  .books-wrapper .book-buttons {
+    width: 45%; } }
 @media screen and (min-width: 1100px) {
   .real-book-list-wrapper,
   .illustrated-book-list-wrapper {
@@ -473,7 +510,10 @@ table {
     grid-template-columns: 250px 250px 250px 250px; }
 
   .books-wrapper .illustrated {
-    margin-top: 60; } }
+    margin-top: 60; }
+
+  .books-wrapper .book-buttons {
+    width: 80%; } }
 body {
   background-image: linear-gradient(90deg, #dc5cff, #3f61ff); }
 
