@@ -167,7 +167,7 @@ class App extends Component {
                   path={ROUTES.PREVIEW_COLLECTIONS}
                   component={PreviewCollections}
                 />
-                <Route component={NotFound} />
+                <Route render={() => <NotFound userAuth={this.state.user} />} />
               </Switch>
             ) : (
               <Switch>
