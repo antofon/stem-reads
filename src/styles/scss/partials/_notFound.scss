@@ -1,1 +1,61 @@
 //For 404 Error
+
+.page-error-container {
+  max-width: 700px;
+  margin: 50px auto;
+
+  .divider {
+    border: 1px solid white;
+  }
+}
+
+.title-wrapper {
+  margin-bottom: 10vw;
+  .error-title {
+    font-family: $comfortaa;
+    font-weight: 500;
+    text-align: center;
+    font-size: 7vw;
+    color: #dcff5c;
+  }
+}
+
+.meaning-container {
+  color: #fff;
+  font-family: $segoe;
+  // width: 267px;
+  width: 84vw;
+  margin: 10vw auto 0 auto;
+  .definition {
+    font-size: 6.5vw;
+    font-weight: 600;
+  }
+
+  .phonetics {
+    font-size: 4.5vw;
+    font-weight: 300;
+    .shrug-emoji {
+      font-size: 3.5vw;
+    }
+  }
+
+  .word-type {
+    font-style: italic;
+    font-weight: 300;
+    margin: 2vw 0 6vw 0;
+  }
+
+  .definition-container {
+    list-style: decimal outside none;
+
+    li:nth-child(even),
+    li:last-child {
+      margin-top: 4vw;
+    }
+
+    .explanation {
+      color: #dcff5c;
+      font-style: italic;
+    }
+  }
+}

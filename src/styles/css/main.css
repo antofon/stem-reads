@@ -515,6 +515,47 @@ table {
 
   .books-wrapper .book-buttons {
     width: 80%; } }
+.page-error-container {
+  max-width: 700px;
+  margin: 50px auto; }
+  .page-error-container .divider {
+    border: 1px solid white; }
+
+.title-wrapper {
+  margin-bottom: 10vw; }
+  .title-wrapper .error-title {
+    font-family: "Comfortaa", cursive;
+    font-weight: 500;
+    text-align: center;
+    font-size: 7vw;
+    color: #dcff5c; }
+
+.meaning-container {
+  color: #fff;
+  font-family: "Segoe UI";
+  width: 84vw;
+  margin: 10vw auto 0 auto; }
+  .meaning-container .definition {
+    font-size: 6.5vw;
+    font-weight: 600; }
+  .meaning-container .phonetics {
+    font-size: 4.5vw;
+    font-weight: 300; }
+    .meaning-container .phonetics .shrug-emoji {
+      font-size: 3.5vw; }
+  .meaning-container .word-type {
+    font-style: italic;
+    font-weight: 300;
+    margin: 2vw 0 6vw 0; }
+  .meaning-container .definition-container {
+    list-style: decimal outside none; }
+    .meaning-container .definition-container li:nth-child(even),
+    .meaning-container .definition-container li:last-child {
+      margin-top: 4vw; }
+    .meaning-container .definition-container .explanation {
+      color: #dcff5c;
+      font-style: italic; }
+
 body {
   background-image: linear-gradient(90deg, #dc5cff, #3f61ff); }
 
