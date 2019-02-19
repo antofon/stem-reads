@@ -4,15 +4,17 @@ import { Link } from "react-router-dom";
 
 const NotFound = props => {
   return (
-    <div>
-      <h2 className="error-title">404 Error:</h2>
+    <div className="page-error-container">
+      <div className="title-wrapper">
+        <h2 className="error-title">404 Error:</h2>
 
-      <h2>Page Not Found</h2>
+        <h2 className="error-title">Page Not Found</h2>
+      </div>
       <hr className="divider" />
 
-      <div className="definition">
+      <div className="meaning-container">
         <h3>
-          404 Error&nbsp;
+          <span className="definition">404 Error</span>&nbsp;
           <span className="phonetics">
             [four-o-four air-were]
             <span class="shrug-emoji"> ¯\_(ツ)_/¯</span>
@@ -20,17 +22,19 @@ const NotFound = props => {
         </h3>
         <h4 class="word-type">noun</h4>
 
-        <ol>
+        <ol className="definition-container">
           <li>
             A page that reveals itself due to HUMAN error *cough cough*
-            <li>“The 404 error is the bain of a user’s web experience.”</li>
+            <p className="explanation">
+              “The 404 error is the bain of a user’s web experience.”
+            </p>
           </li>
           <li>Seriously, how did you get to this page?</li>
           <li>
             An error that results in panic, confusion, or utter annoyance.
-            <li>
+            <p className="explanation">
               “A curious but naive Engineer who runs into a 404 error. Great.”
-            </li>
+            </p>
           </li>
         </ol>
       </div>
