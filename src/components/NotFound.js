@@ -6,9 +6,9 @@ const NotFound = props => {
   return (
     <div className="page-error-container">
       <div className="title-wrapper">
-        <h2 className="error-title">404 Error:</h2>
+        <h2 className="error-title">404 Error: Page&nbsp;Not&nbsp;Found</h2>
 
-        <h2 className="error-title">Page Not Found</h2>
+        {/* <h2 className="error-title">Page Not Found</h2> */}
       </div>
       <hr className="divider" />
 
@@ -24,7 +24,7 @@ const NotFound = props => {
 
         <ol className="definition-container">
           <li>
-            A page that reveals itself due to HUMAN error *cough cough*
+            A page that reveals itself due to HUMAN error *cough cough*.
             <p className="explanation">
               “The 404 error is the bain of a user’s web experience.”
             </p>
@@ -40,17 +40,13 @@ const NotFound = props => {
       </div>
 
       {props.userAuth ? (
-        <p className="">
-          <Link to={ROUTES.DASHBOARD}>
-            <button className="preview-collection">Return to Dashboard</button>
-          </Link>
-        </p>
+        <Link to={ROUTES.DASHBOARD} class="route">
+          <button className="return-dashboard">Return to Dashboard</button>
+        </Link>
       ) : (
-        <p className="">
-          <Link to={ROUTES.LANDING}>
-            <button className="preview-collection">Return to Home</button>
-          </Link>
-        </p>
+        <Link to={ROUTES.LANDING} class="route">
+          <button className="return-home">Return to Home</button>
+        </Link>
       )}
     </div>
   );
