@@ -158,7 +158,10 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
+                {/* <Route
+                  path={ROUTES.ACCOUNT_FAQ}
+                  render={() => <AccountFaq faqUserAuth={this.state.user} />}
+                /> */}
                 <Route
                   path={ROUTES.SIGN_UP_SUCCESS}
                   component={SignupSuccess}
@@ -173,7 +176,7 @@ class App extends Component {
               <Switch>
                 <Route exact path={ROUTES.LANDING} component={Landing} />
                 <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
-                <Route component={NotFound} />
+                <Route render={() => <NotFound userAuth={this.state.user} />} />
               </Switch>
             )}
           </div>
