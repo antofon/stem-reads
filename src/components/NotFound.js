@@ -17,10 +17,10 @@ const NotFound = props => {
           <span className="definition">404 Error</span>&nbsp;
           <span className="phonetics">
             [four-o-four air-were]
-            <span class="shrug-emoji"> ¯\_(ツ)_/¯</span>
+            <span className="shrug-emoji"> ¯\_(ツ)_/¯</span>
           </span>
         </h3>
-        <h4 class="word-type">noun</h4>
+        <h4 className="word-type">noun</h4>
 
         <ol className="definition-container">
           <li>
@@ -40,12 +40,12 @@ const NotFound = props => {
       </div>
 
       {props.userAuth ? (
-        <Link to={ROUTES.DASHBOARD} class="route">
+        <Link to={ROUTES.DASHBOARD} className="route">
           <button className="return-dashboard">Return to Dashboard</button>
         </Link>
       ) : (
-        <Link to={ROUTES.LANDING} class="route">
-          <button className="return-home">Return to Home</button>
+        <Link to={ROUTES.LANDING} className="route">
+          <button className="return-home">Return to Homepage</button>
         </Link>
       )}
     </div>
