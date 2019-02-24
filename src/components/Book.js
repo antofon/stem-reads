@@ -6,7 +6,14 @@ const Book = props => {
   return (
     <div>
       <figure>
-        <img className="book-image" src={image} alt={title} />
+        <div className="delete-button-wrapper">
+          <div className="book-image-wrapper">
+            <img className="book-image" src={image} alt={title} />
+            <button onClick={() => props.deleteBook(props.index)}>
+              &times;
+            </button>
+          </div>
+        </div>
         <figcaption>
           <p className="book-title">{title}</p>
           <p className="book-author">{author}</p>
@@ -17,9 +24,6 @@ const Book = props => {
         <a href={link} target="_blank" rel="noopener noreferrer">
           View on Amazon
         </a>
-        <button onClick={() => props.deleteBook(props.index)}>
-          Delete Book
-        </button>
       </div>
     </div>
   );
