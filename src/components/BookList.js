@@ -28,7 +28,7 @@ class BookList extends Component {
     if (this.props.type1) {
       realBookDataArr.map(key =>
         realListElt.push(
-          <div key={key}>
+          <div key={key} className="nested-book-list-wrapper">
             <ul>
               <li key={key} className="float-left">
                 <Book
@@ -47,7 +47,7 @@ class BookList extends Component {
     if (this.props.type2) {
       illustratedBookDataArr.map(key =>
         illustratedListElt.push(
-          <div key={key}>
+          <div key={key} className="nested-book-list-wrapper">
             <ul>
               <li key={key} className="float-left">
                 <Book
