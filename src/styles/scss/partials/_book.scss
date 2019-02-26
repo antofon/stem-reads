@@ -4,7 +4,7 @@
   border-radius: 3px;
   border: none;
 
-  line-height: 17px;
+  // line-height: 17px;
   // font-size: 16px;
   cursor: pointer;
   font-family: $segoe;
@@ -41,7 +41,8 @@
   .book-buttons {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    // width: 85%;
+    width: 160px;
     margin: 0 auto;
     padding-top: 10px;
 
@@ -96,10 +97,12 @@
   grid-template-columns: 250px;
   grid-row-gap: 80px;
   margin: auto;
+  justify-items: center;
   .book-image {
-    width: 250px;
+    // width: 250px;
     max-width: 100%;
     vertical-align: middle;
+    height: 240px;
   }
   figure {
     width: 100%;
@@ -116,12 +119,13 @@
 
   div {
     ul {
-      width: 83%;
+      // width: 83%;
       margin: 0 auto;
     }
   }
   div:first-child {
     flex: 1.3344;
+    text-align: center;
   }
   div:nth-child(2) {
     flex: 1.3344;
@@ -143,13 +147,14 @@
   margin: 28px auto;
 
   .book-image {
-    width: 250px;
+    // width: 250px;
     max-width: 100%;
     vertical-align: middle;
+    height: 207px;
   }
   div {
     ul {
-      width: 83%;
+      // width: 83%;
       margin: auto;
     }
   }
@@ -167,6 +172,7 @@
   }
   div:first-child {
     flex: 1.3344;
+    text-align: center;
   }
   div:nth-child(2) {
     flex: 1.3344;
@@ -193,9 +199,9 @@
       text-align: initial;
     }
 
-    .book-buttons {
-      width: 70%;
-    }
+    // .book-buttons {
+    //   width: 70%;
+    // }
   }
 
   .real-book-list-wrapper,
@@ -209,13 +215,28 @@
     div {
       text-align: center;
     }
+
+    .book-buttons {
+      width: 160px;
+    }
   }
+
+  // .real-book-list-wrapper {
+  //   .book-buttons {
+  //     width: 82%;
+  //   }
+  // }
+  // .illustrated-book-list-wrapper {
+  //   .book-buttons {
+  //     width: 53%;
+  //   }
+  // }
 }
 
 @media screen and (min-width: 800px) {
   .books-wrapper {
     .book-buttons {
-      width: 58%;
+      // width: 58%;
     }
   }
 }
@@ -227,13 +248,15 @@
     }
 
     .book-buttons {
-      width: 45%;
+      // width: 45%;
     }
   }
 
   .real-book-list-wrapper,
   .illustrated-book-list-wrapper {
     margin: 28px auto 15px auto;
+    grid-column-gap: 32px;
+    grid-template-columns: 21vw 21vw 21vw 21vw;
   }
 }
 
@@ -241,7 +264,7 @@
   .real-book-list-wrapper,
   .illustrated-book-list-wrapper {
     width: 1000px;
-    grid-template-columns: 250px 250px 250px 250px;
+    grid-template-columns: 230px 230px 230px 230px;
   }
 
   .books-wrapper {
@@ -252,7 +275,8 @@
 
   .books-wrapper {
     .book-buttons {
-      width: 80%;
+      // width: 80%;
+      // width: 82%;
     }
   }
 }
@@ -273,6 +297,7 @@
     right: -13px;
     top: -8px;
     padding: 4px 8px;
+    line-height: 17px;
     @include button-colors(#f91587, $white-copy);
     @extend %button-misc;
     &:hover {
