@@ -24,15 +24,21 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-        <input
-          type="button"
-          value="Sign out"
-          id="Sign out"
-          onClick={this.signOut}
-        />
+        <div class="sign-out-wrapper">
+          {/* <input
+            type="button"
+            value="Sign out"
+            id="sign-out"
+            onClick={this.signOut}
+          /> */}
+          <button id="sign-out" onClick={this.signOut}>
+            Sign Out
+          </button>
+          <button onClick={this.props.loadBooks}>Load Books</button>
+          <button onClick={this.props.clearBooks}>Delete Books</button>
+        </div>
         {/* <h2>Welcome to the Dashboard!!!!</h2> */}
-        <button onClick={this.props.loadBooks}>Load Books</button>
-        <button onClick={this.props.clearBooks}>Clear Books</button>
+
         <div className="books-wrapper">
           <div>
             <div>
