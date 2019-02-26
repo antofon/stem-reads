@@ -11,6 +11,21 @@
   transition: 0.3s all;
 }
 
+%sign-out {
+  background: #fff;
+  color: #000;
+  padding: 10px 30px;
+  border-radius: 3px;
+  transition: 0.3s all;
+  border: none;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
 @mixin button-colors($bg-color, $text-color) {
   background: $bg-color;
   color: $text-color;
@@ -302,6 +317,33 @@
     @extend %button-misc;
     &:hover {
       @include button-hover($white-copy, #f91587);
+    }
+  }
+}
+
+.sign-out-wrapper {
+  width: 140px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  font-family: $segoe;
+  button {
+    @extend %sign-out;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 668px) {
+  .sign-out-wrapper {
+    width: 626px;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    button {
+      margin-top: 0px;
     }
   }
 }
