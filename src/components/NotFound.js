@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as ROUTES from "../constants/routes";
 import { Link, withRouter } from "react-router-dom";
-import app from "../Firebase/firebase";
+// import app from "../Firebase/firebase";
 
 class NotFound extends Component {
   // signOut = () => {
