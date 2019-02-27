@@ -16,7 +16,7 @@ class Dashboard extends Component {
     };
   }
   signOut = () => {
-    console.log("User signed out successfully");
+    alert("User signed out successfully");
     app.auth().signOut();
     this.props.history.push(ROUTES.LANDING);
   };

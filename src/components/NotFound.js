@@ -4,11 +4,11 @@ import { Link, withRouter } from "react-router-dom";
 import app from "../Firebase/firebase";
 
 class NotFound extends Component {
-  signOut = () => {
-    console.log("User signed out successfully");
-    app.auth().signOut();
-    this.props.history.push(ROUTES.LANDING);
-  };
+  // signOut = () => {
+  //   alert("User signed out successfully");
+  //   app.auth().signOut();
+  //   this.props.history.push(ROUTES.LANDING);
+  // };
   render() {
     return (
       <div className="page-error-container">

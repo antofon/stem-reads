@@ -31,9 +31,9 @@ class Signup extends Component {
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.DASHBOARD);
-        console.log(
-          `username: ${username}, email: ${email}, password: ${passwordOne}`
-        );
+        // console.log(
+        //   `username: ${username}, email: ${email}, password: ${passwordOne}`
+        // );
       })
       .catch(error => {
         this.setState({ error });

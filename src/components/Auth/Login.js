@@ -17,11 +17,11 @@ class Login extends Component {
 
   onChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-    console.log(event.target.name);
+    // console.log(event.target.name);
   };
 
   onSubmit = event => {
-    console.log("Submit clicked");
+    // console.log("Submit clicked");
     const { email, password } = this.state;
 
     app
@@ -30,7 +30,7 @@ class Login extends Component {
       .then(() => {
         this.setState({ ...INITIAL_STATE });
         this.props.history.push(ROUTES.DASHBOARD);
-        console.log(`email: ${email}, password: ${password}`);
+        // console.log(`email: ${email}, password: ${password}`);
       })
       .catch(error => {
         this.setState({ error });

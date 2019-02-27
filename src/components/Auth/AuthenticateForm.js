@@ -32,13 +32,13 @@ class AuthenticateForm extends Component {
       loginCondition: !state.loginCondition
     }));
 
-    console.log(
-      `SignUp Clicked -> Auth signup: ${
-        this.state.showAuthSignup
-      } and Auth login:${this.state.showAuthLogin} and condition: ${
-        this.state.condition
-      }`
-    );
+    // console.log(
+    //   `SignUp Clicked -> Auth signup: ${
+    //     this.state.showAuthSignup
+    //   } and Auth login:${this.state.showAuthLogin} and condition: ${
+    //     this.state.condition
+    //   }`
+    // );
   }
   handleLoginClick() {
     if (this.state.showAuthSignup) {
@@ -52,13 +52,13 @@ class AuthenticateForm extends Component {
       signupCondition: !state.signupCondition
     }));
 
-    console.log(
-      `LoginClicked -> Auth signup: ${
-        this.state.showAuthSignup
-      } and Auth login:${this.state.showAuthLogin} and condition: ${
-        this.state.condition
-      }`
-    );
+    // console.log(
+    //   `LoginClicked -> Auth signup: ${
+    //     this.state.showAuthSignup
+    //   } and Auth login:${this.state.showAuthLogin} and condition: ${
+    //     this.state.condition
+    //   }`
+    // );
   }
   render() {
     return (
