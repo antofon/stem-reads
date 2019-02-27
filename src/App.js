@@ -11,6 +11,7 @@ import Dashboard from "./components/Dashboard";
 import AccountFaq from "./components/AccountFaq";
 import PreviewCollections from "./components/PreviewCollections";
 import SignupSuccess from "./components/Auth/SignupSuccess";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class App extends Component {
   constructor(props) {
@@ -143,41 +144,81 @@ class App extends Component {
             <Header />
             {/* check if user is logged in or not, protecting certain routes from being accessed */}
             {this.state.user ? (
-              <Switch>
-                <Route
-                  exact
-                  path={ROUTES.DASHBOARD}
-                  render={props => (
-                    <Dashboard
-                      username={this.state.user.email}
-                      books={this.state.books}
-                      loadBooks={this.loadBooks}
-                      addBook={this.addBook}
-                      deleteBook={this.deleteBook}
-                      clearBooks={this.clearBooks}
-                    />
-                  )}
-                />
-                {/* <Route
-                  path={ROUTES.ACCOUNT_FAQ}
-                  render={() => <AccountFaq faqUserAuth={this.state.user} />}
-                /> */}
-                <Route
-                  path={ROUTES.SIGN_UP_SUCCESS}
-                  component={SignupSuccess}
-                />
-                <Route
-                  path={ROUTES.PREVIEW_COLLECTIONS}
-                  component={PreviewCollections}
-                />
-                <Route render={() => <NotFound userAuth={this.state.user} />} />
-              </Switch>
+              <Route
+                render={({ location }) =>
+                  console.log(location) || (
+                    <TransitionGroup>
+                      <CSSTransition
+                        key={location.key}
+                        timeout={{ enter: 1000, exit: 0 }}
+                        classNames={"fade"}
+                      >
+                        <Switch location={location}>
+                          <Route
+                            exact
+                            path={ROUTES.DASHBOARD}
+                            render={props => (
+                              <Dashboard
+                                username={this.state.user.email}
+                                books={this.state.books}
+                                loadBooks={this.loadBooks}
+                                addBook={this.addBook}
+                                deleteBook={this.deleteBook}
+                                clearBooks={this.clearBooks}
+                              />
+                            )}
+                          />
+
+                          <Route
+                            path={ROUTES.SIGN_UP_SUCCESS}
+                            component={SignupSuccess}
+                          />
+                          <Route
+                            path={ROUTES.PREVIEW_COLLECTIONS}
+                            component={PreviewCollections}
+                          />
+                          <Route
+                            render={() => (
+                              <NotFound userAuth={this.state.user} />
+                            )}
+                          />
+                        </Switch>
+                      </CSSTransition>
+                    </TransitionGroup>
+                  )
+                }
+              />
             ) : (
-              <Switch>
-                <Route exact path={ROUTES.LANDING} component={Landing} />
-                <Route path={ROUTES.ACCOUNT_FAQ} component={AccountFaq} />
-                <Route render={() => <NotFound userAuth={this.state.user} />} />
-              </Switch>
+              <Route
+                render={({ location }) =>
+                  console.log(location) || (
+                    <TransitionGroup>
+                      <CSSTransition
+                        key={location.key}
+                        timeout={{ enter: 1000, exit: 0 }}
+                        classNames={"fade"}
+                      >
+                        <Switch location={location}>
+                          <Route
+                            exact
+                            path={ROUTES.LANDING}
+                            component={Landing}
+                          />
+                          <Route
+                            path={ROUTES.ACCOUNT_FAQ}
+                            component={AccountFaq}
+                          />
+                          <Route
+                            render={() => (
+                              <NotFound userAuth={this.state.user} />
+                            )}
+                          />
+                        </Switch>
+                      </CSSTransition>
+                    </TransitionGroup>
+                  )
+                }
+              />
             )}
           </div>
         </div>
