@@ -12,14 +12,14 @@ class NotFound extends Component {
   render() {
     return (
       <div className="page-error-container">
-        {this.props.userAuth ? (
+        {/* {this.props.userAuth ? (
           <input
             type="button"
             value="Sign out"
-            id="Sign out"
+            id="not-found-sign-out"
             onClick={this.signOut}
           />
-        ) : null}
+        ) : null} */}
 
         <div className="title-wrapper">
           <h2 className="error-title">404 Error: Page&nbsp;Not&nbsp;Found</h2>
