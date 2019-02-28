@@ -27,3 +27,6 @@ yarn-error.log*
 src/styles/css/main.css.map
 .env.production
 .env.development
+
+#netlify
+/.netlify
