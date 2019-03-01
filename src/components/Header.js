@@ -17,7 +17,7 @@ const Header = props => {
       {/* want to show/hide sub copy based on if user is logged in our out and there is not a match or paths */}
       {(props.userAuth || !props.userAuth) && match ? null : (
         <p>
-          Explore illustrated and fictional books about past and present
+          Explore illustrated and non-fictional books about past and present
           pioneers in&nbsp;
           <a
             href="https://en.wikipedia.org/wiki/Science,_technology,_engineering,_and_mathematics"
