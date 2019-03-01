@@ -61,29 +61,29 @@ class App extends Component {
 
         // const books = {{ ...this.state.books} };
         // console.log(`Books: ${books}`);
-        console.log(`User: ${this.state.user.uid}`);
-        console.log(`All user info: ${user}`);
+        // console.log(`User: ${this.state.user.uid}`);
+        // console.log(`All user info: ${user}`);
         this.ref = base.syncState(`users/${this.state.user.uid}`, {
           context: this,
           state: "books"
         });
-        console.log(
-          `User logged in: ${JSON.stringify(this.state.user, null, 2)}`
-        );
+        // console.log(
+        //   `User logged in: ${JSON.stringify(this.state.user, null, 2)}`
+        // );
       } else {
-        console.log(`User not logged in: ${user}`);
+        // console.log(`User not logged in: ${user}`);
         this.setState({ user: null });
       }
     });
 
     // console.log(`${this.state.user.uid}`);
 
-    console.log("DID MOUNTED");
+    // console.log("DID MOUNTED");
     // this.setState({ books: bookData });
   };
 
   componentWillMount() {
-    console.log("Will MOUNTED");
+    // console.log("Will MOUNTED");
     // this.userRef = base.syncState(`${this.state.user.email}/books`, {
     //   context: this,
     //   state: "books"
@@ -92,19 +92,17 @@ class App extends Component {
     //   context: this,
     //   state: "books"
     // });
-
     // this.ref = base.syncState(`/books`, {
     //   context: this,
     //   state: "books"
     // });
-
     // this.setState({ books: bookData });
-    console.log(`User state in AUTH function: ${this.state.user.uid}`);
+    // console.log(`User state in AUTH function: ${this.state.user.uid}`);
   }
 
   componentWillUnmount() {
     base.removeBinding(this.ref);
-    console.log(`Unmounting!!!!!!!`);
+    // console.log(`Unmounting!!!!!!!`);
   }
 
   // checks if the authentication state of a user changes (i.e. logged in)
@@ -131,7 +129,7 @@ class App extends Component {
         //prints potential user name of logged in user
         // console.log(app.auth().currentUser.displayName);
       } else {
-        console.log(`User not logged in: ${user}`);
+        // console.log(`User not logged in: ${user}`);
         this.setState({ user: null });
       }
     });
@@ -139,89 +137,86 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <div className="app">
-            <Header />
-            {/* check if user is logged in or not, protecting certain routes from being accessed */}
-            {this.state.user ? (
-              <Route
-                render={({ location }) =>
-                  console.log(location) || (
-                    <TransitionGroup>
-                      <CSSTransition
-                        key={location.key}
-                        timeout={{ enter: 1000, exit: 0 }}
-                        classNames={"fade"}
-                      >
-                        <Switch location={location}>
-                          <Route
-                            exact
-                            path={ROUTES.DASHBOARD}
-                            render={props => (
-                              <Dashboard
-                                username={this.state.user.email}
-                                books={this.state.books}
-                                loadBooks={this.loadBooks}
-                                addBook={this.addBook}
-                                deleteBook={this.deleteBook}
-                                clearBooks={this.clearBooks}
-                              />
-                            )}
-                          />
+        <Route
+          render={({ location }) => (
+            <div>
+              <div className="app">
+                <Header
+                  pathname={location.pathname}
+                  userAuth={this.state.user}
+                />
+                {/* check if user is logged in or not, protecting certain routes from being accessed */}
+                {this.state.user ? (
+                  <TransitionGroup>
+                    <CSSTransition
+                      key={location.key}
+                      timeout={{ enter: 1000, exit: 0 }}
+                      classNames={"fade"}
+                    >
+                      <Switch location={location}>
+                        <Route
+                          exact
+                          path={ROUTES.DASHBOARD}
+                          render={props => (
+                            <Dashboard
+                              username={this.state.user.email}
+                              books={this.state.books}
+                              loadBooks={this.loadBooks}
+                              addBook={this.addBook}
+                              deleteBook={this.deleteBook}
+                              clearBooks={this.clearBooks}
+                            />
+                          )}
+                        />
 
-                          <Route
-                            path={ROUTES.SIGN_UP_SUCCESS}
-                            component={SignupSuccess}
-                          />
-                          <Route
-                            path={ROUTES.PREVIEW_COLLECTIONS}
-                            component={PreviewCollections}
-                          />
-                          <Route
-                            render={() => (
-                              <NotFound userAuth={this.state.user} />
-                            )}
-                          />
-                        </Switch>
-                      </CSSTransition>
-                    </TransitionGroup>
-                  )
-                }
-              />
-            ) : (
-              <Route
-                render={({ location }) =>
-                  console.log(location) || (
-                    <TransitionGroup>
-                      <CSSTransition
-                        key={location.key}
-                        timeout={{ enter: 1000, exit: 0 }}
-                        classNames={"fade"}
-                      >
-                        <Switch location={location}>
-                          <Route
-                            exact
-                            path={ROUTES.LANDING}
-                            component={Landing}
-                          />
-                          <Route
-                            path={ROUTES.ACCOUNT_FAQ}
-                            component={AccountFaq}
-                          />
-                          <Route
-                            render={() => (
-                              <NotFound userAuth={this.state.user} />
-                            )}
-                          />
-                        </Switch>
-                      </CSSTransition>
-                    </TransitionGroup>
-                  )
-                }
-              />
-            )}
-          </div>
-        </div>
+                        <Route
+                          path={ROUTES.SIGN_UP_SUCCESS}
+                          component={SignupSuccess}
+                        />
+                        <Route
+                          path={ROUTES.PREVIEW_COLLECTIONS}
+                          component={PreviewCollections}
+                        />
+                        <Route
+                          render={() => <NotFound userAuth={this.state.user} />}
+                        />
+                      </Switch>
+                    </CSSTransition>
+                  </TransitionGroup>
+                ) : (
+                  <Route
+                    render={({ location }) => (
+                      <TransitionGroup>
+                        <CSSTransition
+                          key={location.key}
+                          timeout={{ enter: 1000, exit: 0 }}
+                          classNames={"fade"}
+                        >
+                          <Switch location={location}>
+                            <Route
+                              exact
+                              path={ROUTES.LANDING}
+                              component={Landing}
+                            />
+                            <Route
+                              path={ROUTES.ACCOUNT_FAQ}
+                              component={AccountFaq}
+                            />
+                            <Route
+                              render={() => (
+                                <NotFound userAuth={this.state.user} />
+                              )}
+                            />
+                          </Switch>
+                        </CSSTransition>
+                      </TransitionGroup>
+                    )}
+                  />
+                )}
+              </div>
+            </div>
+          )}
+        />
       </Router>
     );
   }
