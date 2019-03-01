@@ -169,14 +169,14 @@ class App extends Component {
                           )}
                         />
 
-                        <Route
+                        {/* <Route
                           path={ROUTES.SIGN_UP_SUCCESS}
                           component={SignupSuccess}
                         />
                         <Route
                           path={ROUTES.PREVIEW_COLLECTIONS}
                           component={PreviewCollections}
-                        />
+                        /> */}
                         <Route
                           render={() => <NotFound userAuth={this.state.user} />}
                         />
