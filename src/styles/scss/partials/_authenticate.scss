@@ -5,9 +5,10 @@
   // if stemreads description present use margin: 60px auto 0 auto;
   margin: 30px auto 0 auto;
   position: relative;
+  top: -10px;
   .form-wrapper {
     background: $bg-gray;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     border-radius: 4px;
     box-shadow: 7px 7px 15px 0px;
     -moz-box-shadow: 7px 7px 15px 0px $black-copy;
@@ -266,6 +267,7 @@
 @media screen and (min-width: 667px) {
   .component-wrapper {
     width: 380px;
+    top: 0;
   }
 }
 
